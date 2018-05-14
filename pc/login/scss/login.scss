@@ -1,0 +1,261 @@
+@charset "UTF-8";
+@import "normalize";
+@import "mixins";
+@import "core";
+
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: white;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+$navColor:#5d5d5d;
+$org:#eb6300;
+
+//公共头部
+.common-topBar{
+  height: 120px;
+  background-color: $navColor;
+  padding-top: 45px;
+  @include box-sizing(border-box);
+  .common-nav{
+    //height: 100%;
+    width: 1280px;
+    margin: 0 auto;
+  }
+  .navLeft{
+    float: left;
+    .logo{
+      float: left;
+      margin-right: 20px;
+    }
+    .location{
+      float: left;
+      width: 50px;
+      height: 50px;
+      margin-top: -10px;
+      background-color: white;
+      @include border-radius(50%);
+      text-align: center;
+      img{
+        margin-top: 5px;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+      }
+      p{
+        line-height: 18px;
+        font-size: 12px;
+      }
+    }
+  }
+  .navRight{
+    float: right;
+    line-height: 1;
+    a{
+      float: left;
+    }
+    .search{
+      display: inline-block;
+      margin-top: 5px;
+      margin-right: 20px;
+      float: left;
+      width: 200px;
+      height: 70px;
+      position: relative;
+      cursor: pointer;
+      img{
+        float: right;
+        width: 24px;
+        height: 24px;
+      }
+      ul{
+        position: absolute;
+        top:70px;
+        left: 0;
+        background-color: white;
+        width: 200px;
+        padding: 10px 0;
+        display: none;
+        li{
+          padding-left: 20px;
+          @include box-sizing(border-box);
+          a{
+            padding: 10px 0;
+            display: block;
+            width: 100%;
+            color: #666;
+            font-size: 16px;
+          }
+        }
+      }
+      &:hover{
+        ul{
+          display: block;
+          a:hover{
+            color: $org;
+          }
+        }
+      }
+    }
+    .personCenter{
+      float: right;
+      a{
+        color: white;
+        font-size: 18px;
+        padding: 5px;
+
+      }
+      a:last-child{
+        padding-right: 0;
+      }
+      .login{
+        width: 60px;
+      }
+      img{
+        display: inline-block;
+        width: 16px;
+        height: 27px;
+        vertical-align: top;
+        margin-top: -5px;
+      }
+    }
+  }
+
+}
+
+.login{
+  margin-bottom: 185px;
+  .l-banner{
+    height: 1080px;
+    width: 100%;
+    background-image: url("../image/login.jpg");
+    background-size: cover;
+  }
+  .l-method{
+    margin: 0 auto;
+    width: 470px;
+    text-align: center;
+    padding-top: 150px;
+    @include box-sizing(border-box);
+    .l-showImg{
+      display: inline-block;
+      width: 440px;
+      height: 440px;
+      margin-bottom: 95px;
+    }
+  }
+  .l-mode{
+    vertical-align: middle;
+    a{
+      display: block;
+      color: white;
+    }
+    img{
+      display: inline-block;
+      vertical-align: middle;
+      width: 52px;
+      height: 50px;
+      margin-right: 20px;
+    }
+    .l-weiXin,.l-QQ{
+      width: 470px;
+      height: 80px;
+      border-top: 1px solid #c3c2c0;
+      line-height: 80px;
+      text-align: center;
+      font-size: 30px;
+    }
+    .l-QQ{
+      border-bottom: 1px solid #c3c2c0;
+    }
+    .l-count{
+      font-size: 24px;
+      margin-top: 68px;
+    }
+    span{
+      display: inline-block;
+      @include arrow(right,8px,white);
+    }
+  }
+}
+
+//公共尾部
+.common-footer{
+  margin: 0 auto;
+  width: 1280px;
+  padding-top: 70px;
+  border-top:1px solid #d6d7d7;
+//关于我们
+  .aboutUs{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 70px;
+    a{
+    color: #666;
+    font-size: 16px;
+  }
+    ul{
+      float: left;
+      margin-right: 100px;
+    }
+    li{
+      line-height: 36px;
+      color: #666;
+    }
+  }
+//二维码
+  .QR{
+    float: right;
+    img{
+      width: 121px;
+      height: 121px;
+    }
+    a{
+      display: block;
+      margin-bottom: 20px;
+      img{
+        width: 120px;
+        height: 37px;
+      }
+    }
+  }
+  //文字描述
+  .footerText{
+    float: right;
+    width: 240px;
+    margin-left: 40px;
+    p{
+      color: #666;
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+
+//版权声明
+  .right{
+    border-top: 1px solid #d6d7d7;
+    margin-bottom:100px;
+    p{
+      margin-top: 20px;
+      font-size: 15px;
+      color: #666666;
+      line-height: 1;
+    }
+  }
+}

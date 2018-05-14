@@ -1,0 +1,194 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "normalize";
+@import "core";
+@import "mixins";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: $colBackground;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+.index{
+  //搜索框和轮播图
+  .nav{
+    position: relative;
+    //搜索框
+      .searchbar{
+        position: absolute;
+        top:pxTorem(76px);
+        //width: pxTorem(576px);
+        width: 90%;
+        //left:pxTorem(32px);
+        left:5%;
+        height: pxTorem(82px);
+        background-color: rgba(255,255,255,1);
+        border:1px solid $fontCol2;
+        @include border-radius(pxTorem(12px));
+        z-index: 10;
+        .search{
+          //position: relative;
+          //height: pxTorem(80px);
+          font-size:pxTorem(28px);
+          height:pxTorem(28px);
+          line-height:pxTorem(28px);
+          text-align: left;
+          position: absolute;
+          top:pxTorem(28px);
+          width:100%;
+        }
+        //城市选择
+        .city{
+          color:$fontCol1;
+          width: pxTorem(142px);
+          height:pxTorem(28px);
+          border-right:1px solid $colDark;
+          padding-left: pxTorem(30px);
+          float: left;
+          @include box-sizing(border-box);
+          .choose{
+            display: inline-block;
+            width: pxTorem(22px);
+            height: pxTorem(14px);
+            //@include arrow(bottom,pxTorem(10px),$colD);
+            margin-left: pxTorem(16px);
+          }
+        }
+        input{
+          padding-left: pxTorem(18px);
+          float: left;
+          color:transparent;
+        }
+        //搜索小图标
+        .iconsousuo{
+          position: absolute;
+          top:- pxTorem(6px);
+          right: pxTorem(40px);
+          width: pxTorem(44px);
+          height: pxTorem(40px);
+        }
+      }
+    //轮播图
+    .shuffling{
+      width: 100%;
+      height: pxTorem(660px);
+      .swiper-wrapper{
+        width: 100%;
+        height: pxTorem(660px);
+      }
+      //ul{
+      //  height: pxTorem(660px);
+      //  li{
+      //    height: 100%;
+      //  }
+      //}
+
+    }
+  }
+
+
+//中间部分content
+  .content{
+    width: 100%;
+    position: fixed;
+    padding:0 pxTorem(32px);
+    left:0;
+    bottom:pxTorem(160px);
+    @include box-sizing(border-box);
+    ul{
+      li{
+        float: left;
+        width: 25%;
+        text-align: center;
+        p{
+          margin-top: pxTorem(20px);
+        }
+        a{
+          color:$fontCol1;
+          font-size: pxTorem(28px);
+        }
+        img{
+          margin:0 auto;
+          width:pxTorem(116px);
+          height:pxTorem(116px);
+        }
+      }
+    }
+  }
+
+
+
+
+//底部footer
+  .i-footer{
+    width: 100%;
+    position: fixed;
+    height:pxTorem(100px);
+    background-color: white;
+    left:0;
+    bottom:0;
+    font-size: pxTorem(22px);
+    border-top: 1px solid $gray1;
+    @include box-sizing(border-box);
+    ul{
+      li{
+        float: left;
+        width: 25%;
+        height:pxTorem(100px);
+        position: relative;
+        a{
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(- 50%,-50%);
+          width:100%;
+          color:$fontCol2;
+          text-align: center;
+        }
+        span{
+          line-height: 1;
+        }
+        i{
+          font-size: pxTorem(40px);
+          color: $fontCol2;
+          display: block;
+          margin-bottom: pxTorem(6px);
+        }
+        .icon-zhuye{
+          color: $colOrange;
+        }
+      }
+      .i-homePage a{
+        color: $colOrange;
+      }
+
+
+    }
+  }
+
+
+
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买房</title>
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transtion=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-we.c-app-status-bar-style">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!--<script src="./js/flex.js"></script>-->
+    <link rel="stylesheet" href="./css/order.css">
+</head>
+<body>
+
+    <!--返回-->
+    <div class="o-back">
+        <i class="iconfont icon-zuojiantou"></i>
+        预约时间
+    </div>
+    <div class="order">
+        <!--进度条-->
+        <div class="o-progress">
+            <div class="o-leftTime">
+                <i class="iconfont icon-shijian-tianchong"></i>
+                预约时间
+            </div>
+            <div class="o-rightTime">
+                <span class="o-timeOver"></span>
+                提交成功
+            </div>
+            <div class="o-line">
+
+            </div>
+        </div>
+        <!--正文-->
+        <div class="o-time">
+            <ul>
+                <li>称呼<input type="text" placeholder="必填" required></li>
+                <li>手机号码<input type="tel" placeholder="必填" required></li>
+                <li>期望看房时间
+                    <input type="text" placeholder="请选择时间" disabled>
+                </li>
+            </ul>
+
+        </div>
+        <button>确定预约</button>
+    </div>
+
+</body>
+</html>

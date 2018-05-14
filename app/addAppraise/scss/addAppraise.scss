@@ -1,0 +1,135 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.aa-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  font-size: pxTorem(28px);
+  border-bottom: 1px solid $gray1;
+  background-color: white;
+  padding: 0 pxTorem(30px);
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  text-align: center;
+  i{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+}
+
+.addAppraise{
+  height: 100%;
+  width: 100%;
+  padding-top: pxTorem(96px);
+  padding-bottom: pxTorem(84px);
+  background-color: $colBackground;
+  @include box-sizing(border-box);
+
+  .aa-content{
+    padding: 0 pxTorem(30px);
+    background-color: white;
+    @include box-sizing(border-box);
+    h3{
+      font-size: pxTorem(22px);
+      color: $fontCol1;
+      line-height: pxTorem(80px);
+    }
+    .so-text{
+      position: relative;
+      textarea{
+        width: 100%;
+        height: pxTorem(198px);
+        border: 1px solid $gray1;
+        padding: pxTorem(20px);
+        //padding-bottom: pxTorem(50px);
+        @include box-sizing(border-box);
+        font-size: pxTorem(22px);
+        color: $fontCol1;
+        @include border-radius(pxTorem(4px));
+      }
+      p{
+        position: absolute;
+        //width: 100%;
+        //text-align: right;
+        bottom:pxTorem(20px);
+        right:pxTorem(20px);
+        font-size: pxTorem(20px);
+        color: $fontCol2;
+        span{
+          color: $colOrange;
+        }
+      }
+    }
+
+    .so-suggestion{
+      padding: pxTorem(20px) 0;
+      p{
+        font-size: pxTorem(20px);
+        color: $fontCol2;
+        line-height: pxTorem(38px);
+      }
+    }
+  }
+  button{
+    position: fixed;
+    height: pxTorem(84px);
+    line-height: pxTorem(84px);
+    width: 100%;
+    text-align: center;
+    background-color: $colOrange;
+    color: white;
+    font-size: pxTorem(26px);
+    bottom:0;
+    left:0;
+  }
+}
+
+
+

@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "normalize";
+@import "core";
+@import "mixins";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.l-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  padding: 0 pxTorem(30px);
+  font-size: pxTorem(28px);
+  border-bottom: 1px solid $gray1;
+  background-color: white;
+  @include box-sizing(border-box);
+  color: #676767;
+  z-index: 10;
+  span{
+    float: left;
+    color: $fontCol1;
+    .icon-guanbi{
+      font-size: pxTorem(30px);
+    }
+  }
+  a{
+    float: right;
+    color: $fontCol1;
+  }
+}
+
+.login{
+  padding-top:pxTorem(112px);
+  //内容
+  .l-content{
+    margin: pxTorem(80px) auto;
+    margin-bottom: pxTorem(124px);
+    height: pxTorem(440px);
+    text-align: center;
+    font-size: pxTorem(38px);
+    width: pxTorem(440px);
+    color: $fontCol1;
+    padding:pxTorem(90px) 0;
+    border:pxTorem(52px) solid $colOrange;
+    @include border-radius(50%);
+    @include box-sizing(border-box);
+  }
+
+
+ //选择登录方式
+  .l-mode{
+    width: 100%;
+    padding: 0 pxTorem(143px);
+    //position: fixed;
+    //left:0;
+    //bottom:0;
+    height: pxTorem(314px);
+    @include box-sizing(border-box);
+    text-align: center;
+    color: $fontCol1;
+    img{
+      display: inline-block;
+      width: pxTorem(40px);
+      height: pxTorem(40px);
+      vertical-align: middle;
+      margin-right: pxTorem(10px);
+    }
+    .l-weiXin{
+      font-size: pxTorem(24px);
+      height: pxTorem(74px);
+      border-bottom: 1px solid $gray1;
+      border-top:1px solid $gray1;
+      line-height: pxTorem(74px);
+      vertical-align: middle;
+    }
+    .l-weiBo{
+      font-size: pxTorem(24px);
+      height: pxTorem(74px);
+      line-height: pxTorem(74px);
+      border-bottom: 1px solid $gray1;
+      vertical-align: middle;
+    }
+    .l-count{
+      height: pxTorem(190px);
+      line-height: pxTorem(190px);
+      font-size: pxTorem(22px);
+      span{
+        line-height: 1;
+        margin-left: pxTorem(8px);
+        .icon-jiantou{
+          font-size: pxTorem(22px);
+          color: $fontCol1;
+        }
+      }
+    }
+  }
+}
+

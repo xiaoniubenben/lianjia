@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的房子</title>
+    <link rel="stylesheet" href="./css/soldHouse.css">
+</head>
+<body>
+    <!--公共头部-->
+    <div class="common-topBar">
+        <div class="common-nav">
+            <div class="navLeft">
+                <a href="javascript:;" class="logo">
+                    <img src="./image/logo.png" alt="">
+                </a>
+                <div class="location">
+                    <img src="./image/headmap.png" alt="">
+                    <p>烟台</p>
+                </div>
+            </div>
+            <div class="navRight">
+                <!--<a href="javascript:;" class="search">-->
+                    <!--<img src="./image/headsearch.png" alt="">-->
+                <!--</a>-->
+                <div class="search">
+                    <img src="./image/headsearch.png" alt="">
+                    <ul>
+                        <li><a href="javascript:;">租房</a></li>
+                        <li><a href="javascript:;">找房</a></li>
+                    </ul>
+                </div>
+                <!--未登录-->
+                <div class="personCenter">
+                    <!--<a href="javascript:;"> <img src="./image/headuser.png" alt=""></a>-->
+                    <a href="javascript:;" class="login">
+                        <img src="./image/headuser.png" alt="">
+                        登录
+                    </a>
+                    <a href="javascript:;">
+                        注册
+                    </a>
+                </div>
+                <!--已登录-->
+                <!--<div class="personal">-->
+                    <!--<a href="javascript:;">-->
+                        <!--<img src="./image/headuser.png" alt="">-->
+                        <!--<span>骑驴</span>-->
+                    <!--</a>-->
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <!--中心内容-->
+    <div class="soldHouse">
+        <!--标题-->
+        <div class="sh-title">
+            <h3>闪电卖房</h3>
+            <a href="javascript:;">
+                <span>!</span>
+                一键委托
+            </a>
+        </div>
+        <!--卖房-->
+        <div class="sh-cont">
+            <!--左列卖房信息-->
+            <div class="sh-contLeft">
+                <ul>
+                    <!--小区-->
+                    <li class="sh-plot"><input type="text" placeholder="请输入（烟台）小区"><a href="javascript:;"> > </a></li>
+                    <!--面积-->
+                    <li class="sh-area">您的面积<input type="text" placeholder="请输入您的房屋面积"><span>平方米</span></li>
+                    <!--户型-->
+                    <li class="sh-type">您的户型
+                        <div><input type="text"><span>室</span><input type="text"><span>厅</span><input type="text"><span>卫</span></div>
+                    </li>
+                    <!--价格-->
+                    <li class="sh-price">
+                        您的价格
+                        <input type="text" placeholder="请输入您的房价"><span>万</span>
+                    </li>
+                    <!--楼层-->
+                    <li class="sh-floor">
+                        楼层
+                        <input type="text" placeholder="请输入您的楼层"><span>楼</span>
+                    </li>
+                    <!--装修-->
+                    <li class="sh-finish">
+                        装修
+                        <select name="" dir="rtl">
+                            <option value="">请选择装修程度</option>
+                            <option value="">精装</option>
+                            <option value="">简装</option>
+                            <option value="">毛坯</option>
+                        </select>
+                        <span></span>
+                    </li>
+                    <!--朝向-->
+                    <li class="sh-orientation">
+                        朝向
+                        <select name="" dir="rtl">
+                            <option value="">请选择朝向</option>
+                            <option value="">朝东</option>
+                            <option value="">朝西</option>
+                            <option value="">朝南</option>
+                            <option value="">朝北</option>
+                        </select>
+                        <span></span>
+                    </li>
+                    <!--房屋类型-->
+                    <li class="sh-genre">
+                        房屋类型
+                        <select name="" dir="rtl">
+                            <option value="">请选择房屋类型</option>
+                            <option value="">板房</option>
+                            <option value="">简装</option>
+                            <option value="">毛坯</option>
+                        </select>
+                        <span></span>
+                    </li>
+                    <!--使用面积-->
+                    <li class="sh-useArea">使用面积<input type="text" placeholder="请输入使用面积"><span>平方米</span></li>
+                    <!--楼层总数-->
+                    <li class="sh-totalFloor">
+                        楼层总数
+                        <input type="text" placeholder="请输入楼层总数"><span>层</span>
+                    </li>
+                    <!--配备电梯-->
+                    <li class="sh-elevator">
+                        配备电梯
+                        <select name="" dir="rtl">
+                            <option value="">请选择电梯</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">6</option>
+                        </select>
+                        <span></span>
+                    </li>
+                    <!--产权年限-->
+                    <li class="sh-equity">
+                        产权年限
+                        <select name="" dir="rtl">
+                            <option value="">请选择产权年限</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">6</option>
+                        </select>
+                        <span></span>
+                    </li>
+                    <!--房屋地址-->
+                    <li class="sh-position">
+                        房屋地址 <input type="text" placeholder="请输入您的房屋地址">
+                    </li>
+                    <!--房主姓名-->
+                    <li class="sh-name">
+                        房东姓名 <input type="text" placeholder="请输入房东姓名">
+                    </li>
+                    <!--您的电话-->
+                    <li class="sh-tel">
+                        您的电话 <input type="tel" placeholder="请输入您的电话">
+                    </li>
+                    <!--手机验证码-->
+                    <li class="sh-code">
+                        <input type="text" placeholder="请输入手机验证码"><button>获取验证码</button>
+                    </li>
+                    <!--上传图片-->
+                    <li class="sh-uploadPictures">
+                        上传图片
+                        <div>
+                            <p>上传头像</p>
+                            <a href="javascript:;">
+                                ＋
+                            </a>
+                        </div>
+                        <input type="file">
+                    </li>
+                </ul>
+                <a href="javascript:;" class="sh-confirm">
+                    <span>确认发布</span>
+                </a>
+            </div>
+            <!--右列推荐信息-->
+            <div class="sh-contRight">
+                <h3>为您精选</h3>
+                <ul>
+                    <li>
+                        <a href="javascript:;">
+                            <h4>独享天台私家花园  <span>双地铁精装</span></h4>
+                            <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                            <div class="sh-feature">
+                                <div class="sh-d1">
+                                    <div class="sh-dd1">
+                                        南北<br>通透
+                                    </div>
+                                </div>
+                                <div class="sh-d2">
+                                    <div class="sh-dd2">
+                                        满五<br>唯一
+                                    </div>
+                                </div>
+                                <div class="sh-d3">
+                                    <div class="sh-dd3">
+                                        复式
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sh-housePrice">
+                                <p class="sh-total"><span>350</span>万</p>
+                                <p class="sh-univalence"><span>12,456</span>元/平</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:;">
+                            <h4>独享天台私家花园 <span>双地铁精装</span></h4>
+                            <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                            <div class="sh-feature">
+                                <div class="sh-d1">
+                                    <div class="sh-dd1">
+                                        南北<br>通透
+                                    </div>
+                                </div>
+                                <div class="sh-d2">
+                                    <div class="sh-dd2">
+                                        满五<br>唯一
+                                    </div>
+                                </div>
+                                <div class="sh-d3">
+                                    <div class="sh-dd3">
+                                        复式
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="sh-housePrice">
+                                <p class="sh-total"><span>350</span>万</p>
+                                <p class="sh-univalence"><span>12,456</span>元/平</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                <a href="javascript:;" class="sh-lookMore">查看更多</a>
+            </div>
+        </div>
+
+    </div>
+    <!--公共尾部-->
+    <div class="common-footer">
+        <!--关于我们-->
+        <div class="aboutUs">
+            <ul>
+                <li><a href="javascript:;">了解我的房子</a></li>
+                <li><a href="javascript:;">关于我的房子</a></li>
+                <li><a href="javascript:;">联系我们</a></li>
+                <li><a href="javascript:;">加入我们</a></li>
+                <li><a href="javascript:;">隐私声明</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript:;">网站地址</a></li>
+                <li><a href="javascript:;">友情链接</a></li>
+                <li><a href="javascript:;">经纪人登录</a></li>
+            </ul>
+            <ul>
+                <li>官方客服</li>
+                <li>0535-123456</li>
+                <li>地址</li>
+                <li>烟台莱山</li>
+            </ul>
+            <!--文字描述-->
+            <div class="footerText">
+                <p>一键倾城 / 为您为家</p>
+                <p>集二手、新房、租房功能于一体</p>
+                <p>随时随地任性找房</p>
+                <p>IM匿名咨询让您放心</p>
+                <p>消息动态推送让您省心</p>
+                <p>服务承诺让您安心</p>
+                <p>数据百科锦囊让您感受贴心漫漫找房路</p>
+                <p>我们努力为您想更多。</p>
+            </div>
+            <!--二维码-->
+            <div class="QR">
+                <a href="javascript:;"><img src="./image/Android.png" alt=""></a>
+                <a href="javascript:;"><img src="./image/iPhone.png" alt=""></a>
+                <img src="./image/erweima.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="right">
+            <p>我的房子（上海）科技有限公司 | 网络经营许可证 京ICP备16057509号-2 | © Copyright©2010-2017 我的房子wodefangzi.com版权所有</p>
+            <p>京公网安备11010802024019号</p>
+        </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/soldHouse.js"></script>
+</body>
+</html>

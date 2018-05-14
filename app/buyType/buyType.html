@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买房</title>
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transtion=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-we.c-app-status-bar-style">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!--<script src="./js/flex.js"></script>-->
+    <link rel="stylesheet" href="./css/buyType.css">
+</head>
+<body>
+
+    <!--返回-->
+    <div class="bt-back">
+        <i class="iconfont icon-zuojiantou"></i>
+        请选择购买方式
+    </div>
+    <div class="buyType">
+        <!--正文-->
+        <div class="bt-cont">
+            <!--购买条数-->
+            <div class="bt-branch">
+                <label for="d1">
+                    <p>购买条数（<span>0.01</span>元/条）<input type="text" placeholder="条数" class="bt-buyNum"></p>
+                    <input type="checkbox" id="d1">
+                </label>
+
+            </div>
+            <!--季度购买-->
+            <div class="bt-years">
+                <ul>
+                    <li><label for="p1">月度会员（￥30.00）<input type="radio" id="p1" name="buy"></label></li>
+                    <li><label for="p2">半年度会员（￥150.00）<input type="radio" id="p2" name="buy"></label></li>
+                    <li><label for="p3">年度会员（￥300.00）<input type="radio" id="p3" name="buy"></label></li>
+                </ul>
+            </div>
+            <button>确定</button>
+        </div>
+    </div>
+
+</body>
+</html>

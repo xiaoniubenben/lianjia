@@ -1,0 +1,339 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  //background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.p-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  font-size: pxTorem(28px);
+  border-bottom: 1px solid $gray1;
+  background-color: white;
+  padding: 0 pxTorem(30px);
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  i{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+}
+
+
+.pk{
+  padding-top: pxTorem(70px);
+  @include box-sizing(border-box);
+  padding-bottom: pxTorem(120px);
+  position: relative;
+  //选择隐藏
+  .p-hidden{
+    width: pxTorem(120px);
+    height: pxTorem(120px);
+    position: absolute;
+    top:pxTorem(108px);
+    left:pxTorem(30px);
+    background-color: white;
+    @include border-radius(pxTorem(8px));
+    z-index: 2;
+    div{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      text-align: center;
+      line-height: 1;
+      margin: 0;
+      span{
+        font-size: pxTorem(20px);
+        color:$fontCol2;
+      }
+    }
+    .iconfont{
+      font-size: pxTorem(80px);
+      color: #efefef;
+      display: block;
+    }
+  }
+   .p-nav{
+     width: 100%;
+     padding: pxTorem(38px) 0;
+     padding-left: pxTorem(140px);
+     overflow: hidden;
+     overflow-x: auto;
+     height: pxTorem(195px);
+     @include box-sizing(border-box);
+     div{
+       float: left;
+     }
+     }
+    //加入对比的房源
+     .p-resource{
+       padding: 0 pxTorem(30px);
+       width: pxTorem(600px);
+       height: 100%;
+       @include box-sizing(border-box);
+     }
+      .p-house{
+        position: relative;
+        margin-right: pxTorem(20px);
+        img{
+          width: pxTorem(120px);
+          height: pxTorem(120px);
+          @include border-radius(pxTorem(8px));
+        }
+        span{
+          position: absolute;
+          text-align: center;
+          top: - pxTorem(12px);
+          right:- pxTorem(12px);
+          display: inline-block;
+          color:white;
+          font-size: pxTorem(26px);
+          background-color: $colOrange;
+          width: pxTorem(25px);
+          height: pxTorem(25px);
+          line-height: pxTorem(20px);
+          @include border-radius(50%);
+        }
+        .icon-guanbi{
+          font-size: pxTorem(16px);
+        }
+      }
+     //添加房源
+     .p-addHouse{
+       width: pxTorem(120px);
+       height: pxTorem(120px);
+       @include border-radius(pxTorem(8px));
+       border:1px solid $gray1;
+       @include box-sizing(border-box);
+       position: relative;
+       div{
+         position: absolute;
+         top:50%;
+         left:50%;
+         transform: translate(-50%,-50%);
+         text-align: center;
+         line-height: 1;
+         margin: 0;
+         width: 100%;
+         span{
+           font-size: pxTorem(20px);
+           color:$colLight;
+         }
+       }
+       .icon-jiahao1{
+         font-size: pxTorem(46px);
+         display: block;
+         color: $gray1;
+         margin-bottom: pxTorem(10px);
+       }
+     }
+
+
+  //基本信息
+.p-content{
+  position: relative;
+  h5{
+    padding-left: pxTorem(30px);
+    line-height: pxTorem(50px);
+    background-color: $gray1;
+    font-size: pxTorem(22px);
+    color: $colLight;
+    @include box-sizing(border-box);
+  }
+  .p-contentInfo{
+    width: pxTorem(146px);
+    position: absolute;
+    top:pxTorem(50px);
+    left:0;
+    font-size: pxTorem(20px);
+    color: $fontCol1;
+    text-align: center;
+    background-color: white;
+    vertical-align: middle;
+    border-left: none;
+    li{
+      border: 1px solid $gray1;
+      @include box-sizing(border-box);
+      position: relative;
+      div{
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top:50%;
+        transform: translateY( - 50%);
+      }
+    }
+  }
+  .p-baseInfo{
+    overflow: hidden;
+    overflow-x: auto;
+    margin-left: pxTorem(146px);
+  }
+
+  .p-pkContent{
+    width: pxTorem(844px);
+  }
+  table{
+    border: 1px solid $gray1;
+    border-left: none;
+    border-top: none;
+    font-size: pxTorem(20px);
+    @include box-sizing(border-box);
+    td{
+      width: pxTorem(210px);
+      padding: pxTorem(20px);
+      border: 1px solid $gray1;
+      color: $fontCol1;
+      @include box-sizing(border-box);
+    }
+    //tr{
+    //  position : relative;
+      td:first-child{
+        border-left:none;
+      }
+    //}
+    //td:first-child{
+    //  width: pxTorem(146px);
+    //  font-size: pxTorem(20px);
+    //  color: $fontCol1;
+    //  padding: 0;
+    //  text-align: center;
+    //  background-color: white;
+    //  vertical-align: middle;
+    //  border-left: none;
+    //position: absolute;
+    //left:0;
+    //top:200px;
+    //}
+
+  }
+  .p-fontCol{
+    color: $colOrange;
+  }
+}
+}
+  //分类
+  .p-sort{
+    position: fixed;
+    bottom:pxTorem(130px);
+    right: pxTorem(45px);
+    width: pxTorem(80px);
+    height: pxTorem(80px);
+    background-color: $colOrange;
+    @include border-radius(50%);
+    @include box-sizing(border-box);
+    text-align: center;
+    color:white;
+    .p-sort1{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      line-height: 1;
+      width: 100%;
+      .iconfont{
+        font-size: pxTorem(28px);
+        display: block;
+      }
+      span{
+        font-size: pxTorem(18px);
+        line-height: 1;
+      }
+    }
+  }
+
+
+
+//底部footer
+.p-footer{
+  width: 100%;
+  position: fixed;
+  height:pxTorem(100px);
+  background-color: white;
+  left:0;
+  bottom:0;
+  font-size: pxTorem(22px);
+  border-top: 1px solid $gray1;
+  @include box-sizing(border-box);
+  ul{
+    li{
+      float: left;
+      width: 25%;
+      height:pxTorem(100px);
+      position: relative;
+      a{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(- 50%,-50%);
+        width:100%;
+        color:$fontCol2;
+        text-align: center;
+      }
+      span{
+        line-height: 1;
+      }
+      i{
+        font-size: pxTorem(40px);
+        color: $fontCol2;
+        display: block;
+        margin-bottom: pxTorem(6px);
+      }
+      .icon-shoucang{
+        color: $colOrange;
+      }
+    }
+    .p-attention a{
+      color: $colOrange;
+    }
+
+
+  }
+}
+
+
+
+

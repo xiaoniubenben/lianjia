@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+html{
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+.hunt{
+  width: 100%;
+  height: 100%;
+  padding:0 pxTorem(30px);
+  @include box-sizing(border-box);
+  //顶部搜索框
+  .h-type{
+    overflow: hidden;
+    height: pxTorem(76px);
+    line-height: 1;
+    width: 100%;
+    font-size: pxTorem(22px);
+    a{
+      color:$fontCol1;
+      height: pxTorem(76px);
+      line-height: pxTorem(76px);
+      float: left;
+      padding-right:pxTorem(20px);
+      margin-right: pxTorem(30px);
+      @include box-sizing(border-box);
+    }
+    .h-delect{
+      float: right;
+      padding-right:0;
+      margin-right: 0;
+    }
+  }
+
+  .h-topBack{
+    position: relative;
+    height: pxTorem(56px);
+    //小箭头
+    span{
+      position: absolute;
+      top:- pxTorem(16px);
+      left: pxTorem(15px);
+      width:0;
+      height: 0;
+      border-right:pxTorem(10px) solid transparent;
+      border-left:pxTorem(10px) solid transparent;
+      border-bottom:pxTorem(16px) solid $fontCol2;
+      float: right;
+    }
+    em{
+      position: absolute;
+      top: pxTorem(2px);
+      right: - pxTorem(10px);
+      width:0;
+      height: 0;
+      border-right:pxTorem(10px) solid transparent;
+      border-left:pxTorem(10px) solid transparent;
+      border-bottom:pxTorem(16px) solid white;
+      z-index: 100;
+    }
+  }
+//返回键
+//  .h-back{
+//    position: absolute;
+//    display: inline;
+//    top: pxTorem(10px);
+//    left:pxTorem(30px);
+//    width:pxTorem(30px);
+//    height: pxTorem(30px);
+//  }
+  //搜索框
+  .h-searchbar{
+    //position: absolute;
+    //top:0;
+    width: 100%;
+    //left:15%;
+    height: pxTorem(56px);
+    background-color: rgba(255,255,255,1);
+    border:1px solid $fontCol2;
+    @include border-radius(pxTorem(4px));
+    @include box-sizing(border-box);
+    overflow: hidden;
+    .h-search{
+      position: relative;
+      font-size:pxTorem(28px);
+      height:pxTorem(56px);
+      line-height:pxTorem(56px);
+      text-align: left;
+      //top:pxTorem(18px);
+      width:100%;
+    }
+
+    //定位小图标
+    .h-dingwei{
+      position: absolute;
+      left:0;
+      top:pxTorem(17px);
+      width:pxTorem(60px);
+      height: pxTorem(22px);
+      border-right:1px solid $fontCol2;
+      img{
+        position: absolute;
+        top: - pxTorem(2px);
+        left:pxTorem(20px);
+        width: pxTorem(18px);
+        height: pxTorem(25px);
+        margin:0 auto;
+      }
+    }
+
+    input{
+      position: absolute;
+      left:pxTorem(60px);
+      top:0;
+      vertical-align: top;
+      padding-left: pxTorem(20px);
+      height: pxTorem(56px);
+      font-size: pxTorem(18px);
+      @include box-sizing(border-box);
+      color: $fontCol1;
+    }
+    //搜索小图标
+    .h-iconsousuo{
+      position: absolute;
+      top: pxTorem(14px);
+      right: pxTorem(20px);
+      width: pxTorem(26px);
+      height: pxTorem(24px);
+    }
+
+  }
+
+
+    .h-history{
+      p{
+        color:$fontCol1;
+        margin-bottom: pxTorem(20px);
+        margin-top: pxTorem(30px);
+        font-size: pxTorem(22px);
+        line-height: 1;
+        .icon-lajitong{
+          float: right;
+          font-size: pxTorem(24px);
+          color: $fontCol1;
+        }
+      }
+      div.hisCont{
+        a{
+          color: $fontCol1;
+          display: inline-block;
+          margin-right: pxTorem(10px);
+          margin-bottom: pxTorem(10px);
+          padding: pxTorem(10px) pxTorem(20px);
+          background-color: $gray1;
+          font-size: pxTorem(22px);
+          @include border-radius(4px);
+        }
+      }
+
+    }
+
+  }
+
+
+
+

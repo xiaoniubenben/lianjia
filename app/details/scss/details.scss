@@ -1,0 +1,558 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "normalize";
+@import "core";
+@import "mixins";
+@import "iconfont";
+
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: white;
+  -webkit-text-size-adjust: none;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+//返回
+.d-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: 1;
+  font-size: pxTorem(28px);
+  //border-bottom: 1px solid $gray1;
+  //background-color: rgba(0,0,0,0);
+  @include box-sizing(border-box);
+  z-index: 10;
+  .d-btnback{
+    position: absolute;
+    bottom: pxTorem(20px);
+    left: pxTorem(30px);
+    color: white;
+    .icon-zuojiantou{
+      font-size: pxTorem(28px);
+      color: white;
+      float: left;
+    }
+  }
+  .d-function{
+    position: absolute;
+    bottom: pxTorem(20px);
+    right: pxTorem(30px);
+    a{
+      float: left;
+      margin-left: pxTorem(44px);
+    }
+    .icon-xiaoxi,.icon-7,.icon-pk{
+      font-size: pxTorem(30px);
+      color: rgba(255,255,255,1);
+    }
+  }
+}
+
+
+//正文
+.details{
+  padding-bottom: pxTorem(135px);
+  //padding-top: pxTorem(76px);
+  @include box-sizing(border-box);
+  //轮播图
+  .d-slider{
+    width: 100%;
+    height: pxTorem(410px);
+    img{
+      width: 100%;
+      height: pxTorem(410px);
+    }
+  }
+
+//详情
+  .d-content{
+    padding:pxTorem(20px) pxTorem(40px);
+    @include box-sizing(border-box);
+    //标题
+    .d-title{
+      p{
+        font-size: pxTorem(32px);
+        color:$fontCol1;
+        line-height:pxTorem(42px);
+        overflow: hidden;
+      }
+      .d-peculiarity{
+        height: pxTorem(96px);
+        border-bottom: 1px solid $gray1;
+        width: 100%;
+        position: relative;
+        .d-left{
+          position: absolute;
+          top:50%;
+          transform: translateY(- 50%);
+          //margin-top: pxTorem(30px);
+          .d-d1,.d-d2,.d-d3{
+            float: left;
+            padding: pxTorem(6px) pxTorem(8px);
+            @include border-radius(4px);
+            font-size: pxTorem(16px);
+            margin-right: pxTorem(6px);
+          }
+          .d-d1{
+            background-color: #ffe5d3;
+            color: $colOrange;
+          }
+          .d-d2{
+            background-color: #cffbff;
+            color: #84d6e2;
+          }
+          .d-d3{
+            background-color: #fdf1e0;
+            color: #f19a21;
+          }
+
+        }
+        .d-right{
+          position: absolute;
+          top:50%;
+          transform: translateY(- 50%);
+          right:0;
+          //margin-top: pxTorem(21px);
+          font-size: pxTorem(8px);
+          color:white;
+          text-align: center;
+          line-height: pxTorem(30px);
+          //举报
+          .d-report{
+            float: left;
+            width: pxTorem(40px);
+            height: pxTorem(40px);
+            line-height: pxTorem(40px);
+            text-align: center;
+            font-size: pxTorem(16px);
+            background-color: $colOrange;
+            @include border-radius(50%);
+            margin-top: - pxTorem(5px);
+          }
+          //收藏
+          .d-collect{
+            margin-left: pxTorem(10px);
+            float: right;
+            text-align: center;
+            position: relative;
+            .iconfont{
+              font-size: pxTorem(50px);
+              color: #9f9fa0;
+            }
+            span{
+              position: absolute;
+              z-index: 100;
+              display: block;
+              width: 100%;
+              font-size: pxTorem(16px);
+              top:0;
+              left:50%;
+              transform: translateX(- 50%);
+            }
+          }
+        }
+      }
+
+
+    }
+    //主要信息
+    .d-primaryInformation{
+      height: pxTorem(136px);
+      border-bottom: 1px solid $gray1;
+      padding: pxTorem(30px) 0;
+      @include box-sizing(border-box);
+      font-size: pxTorem(18px);
+
+      &>div{
+        float: left;
+        width: 33%;
+        color: $fontCol1;
+        span{
+          font-family: "A for A";
+          font-size: pxTorem(36px);
+          color: $colOrange;
+          line-height: pxTorem(60px);
+          font-weight: 200;
+        }
+      }
+
+      .d-type{
+        position: relative;
+        width: 33%;
+        height: pxTorem(82px);
+        overflow: hidden;
+        .d-ex{
+          position: absolute;
+          left:50%;
+          transform: translateX(-50%);
+        }
+      }
+      .d-ec{
+        float: right;
+      }
+
+    }
+    //其他信息
+    .d-otherInformation{
+      padding-top: pxTorem(28px);
+      @include box-sizing(border-box);
+      border-bottom: 1px solid $gray1;
+      font-size: pxTorem(16px);
+      overflow: hidden;
+      .small-unit{
+        margin-bottom: pxTorem(28px);
+        float: left;
+        width: 50%;
+        font-size: pxTorem(22px);
+      }
+      .label{
+        position: absolute;
+        display: inline-block;
+        width: pxTorem(90px);
+        text-align: justify;
+        overflow: hidden;
+        color: $fontCol1;
+      }
+      .label:after{
+        display: inline-block;
+        content: '';
+        width: pxTorem(80px);
+        //height: pxTorem(18px);
+        text-align: justify;
+        overflow: hidden;
+      }
+      .msg{
+        display: inline-block;
+        margin-left: pxTorem(90px);
+        position: relative;
+        span{
+          color: $fontCol2;
+        }
+      }
+      .msg:before{
+        content: '：';
+        position: absolute;
+        left: - pxTorem(85px);
+      }
+    }
+    //房主点评
+    .d-comment{
+      padding: pxTorem(36px) 0;
+      &>span{
+        font-size: pxTorem(22px);
+        color: $fontCol1;
+        line-height:1;
+      }
+      p{
+        margin-top:pxTorem(15px) ;
+        color:$fontCol1;
+        font-size: pxTorem(20px);
+      }
+      .d-showMore{
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp:3;
+        overflow: hidden;
+      }
+      .d-clickMore{
+        margin-top: pxTorem(25px);
+        width: 100% ;
+        text-align: center;
+        a{
+          font-size: pxTorem(18px);
+          color:$colLight;
+        }
+        //小箭头
+        span{
+          position: relative;
+          width:0;
+          height: 0;
+          border-right:pxTorem(10px) solid transparent;
+          border-left:pxTorem(10px) solid transparent;
+          border-top:pxTorem(10px) solid #ccc;
+          float: right;
+          top: pxTorem(7px);
+          right:pxTorem(200px);
+        }
+        em{
+          position: absolute;
+          top:- pxTorem(12px);
+          right:- pxTorem(10px);
+          width:0;
+          height: 0;
+          border-right:pxTorem(10px) solid transparent;
+          border-left:pxTorem(10px) solid transparent;
+          border-top:pxTorem(10px) solid white;
+        }
+      }
+
+    }
+
+    //地理位置
+    .d-position{
+      margin-top: pxTorem(30px);
+      height: pxTorem(468px);
+      width: 100%;
+    }
+  }
+
+//底部
+  .d-footer{
+    position: fixed;
+    bottom:0;
+    left:0;
+    width: 100%;
+    height: pxTorem(92px);
+    background-color: #f5f5f5;
+    padding: 0 pxTorem(20px);
+    padding-top: pxTorem(15px);
+    @include box-sizing(border-box);
+    a{
+      display: block;
+      float: left;
+      margin:0 pxTorem(18px);
+      @include border-radius(pxTorem(4px));
+    }
+    .d-addPk{
+      text-align: center;
+      font-size: pxTorem(18px);
+      color: $fontCol2;
+      padding-top: pxTorem(5px);
+      .icon-pk{
+        font-size: pxTorem(32px);
+        display: block;
+        color: $fontCol2;
+      }
+    }
+    .d-addPkActive{
+      color: $colOrange;
+      .icon-pk{
+        color: $colOrange;
+      }
+    }
+    .d-addCollect{
+      color: $fontCol2;
+      font-size: pxTorem(18px);
+      .icon-icon_collect{
+        font-size: pxTorem(35px);
+        display: block;
+        color: $fontCol2;
+      }
+      .icon-icon3{
+        font-size: pxTorem(35px);
+        display: block;
+        color: $colOrange;
+      }
+    }
+    .d-addCollectActive{
+      color: $colOrange;
+    }
+    a:nth-child(3),a:nth-child(4){
+      color: white;
+      background-color: $colOrange;
+      width: pxTorem(168px);
+      height: pxTorem(62px);
+      line-height: pxTorem(62px);
+      text-align: center;
+      font-size: pxTorem(24px);
+    }
+    a:last-child{
+      margin-right: 0;
+    }
+  }
+
+}
+
+//弹框
+.d-commonPop{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  z-index: 20;
+  //分享
+  .d-share{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: pxTorem(294px);
+    width: 100%;
+    background-color: white;
+    ul{
+      padding: 0 pxTorem(30px);
+      height: pxTorem(210px);
+      li{
+        float: left;
+        width: 25%;
+        text-align: center;
+        height: pxTorem(210px);
+        font-size: pxTorem(20px);
+        position: relative;
+        .iconfont{
+          font-size: pxTorem(76px);
+          @include border-radius(50%);
+          display: block;
+          margin: 0 auto;
+          margin-bottom: pxTorem(18px);
+        }
+        .icon-weixin1{
+          color: #2dcc70;
+        }
+        .icon-pengyouquan{
+          color: #6dd206;
+        }
+        .icon-qq{
+          color: #1196db;
+        }
+        .icon-qunfengqqkongjian{
+          color: #fdc82c;
+        }
+        a{
+          color: $fontCol2;
+          display: block;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(- 50%,- 50%);
+          line-height: 1;
+        }
+      }
+    }
+    button{
+      height: pxTorem(83px);
+      line-height: pxTorem(83px);
+      width: 100%;
+      text-align: center;
+      color: $fontCol1;
+      font-size: pxTorem(26px);
+      border-top: 1px solid $gray1;
+      background-color: white;
+    }
+  }
+  //联系
+  .d-contact{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: pxTorem(294px);
+    width: 100%;
+    background-color: white;
+    ul{
+      padding: 0 pxTorem(30px);
+      height: pxTorem(210px);
+      li{
+        float: left;
+        width: 33.3333%;
+        text-align: center;
+        height: pxTorem(210px);
+        font-size: pxTorem(20px);
+        position: relative;
+        .icon-xinfeng,.icon-xiaoxi,.icon-tel{
+          display: block;
+          margin: 0 auto;
+          margin-bottom: pxTorem(30px);
+          font-size: pxTorem(30px);
+          color: $colOrange;
+        }
+        //img{
+        //  width: pxTorem(30px);
+        //  height: pxTorem(30px);
+        //  display: block;
+        //  margin: 0 auto;
+        //  margin-bottom: pxTorem(30px);
+        //}
+        a{
+          color: $fontCol2;
+          display: block;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(- 50%,- 50%);
+          line-height: 1;
+        }
+      }
+    }
+    button{
+      height: pxTorem(83px);
+      line-height: pxTorem(83px);
+      width: 100%;
+      text-align: center;
+      color: $fontCol1;
+      font-size: pxTorem(26px);
+      border-top: 1px solid $gray1;
+      background-color: white;
+    }
+  }
+}
+//关注成功
+.d-extraPop{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  font-size: pxTorem(20px);
+  .d-attention{
+    display: inline-block;
+    padding: 0 pxTorem(44px);
+    height: pxTorem(60px);
+    line-height: pxTorem(60px);
+    background-color: rgba(0,0,0,.6);
+    z-index: 20;
+    color: white;
+    position: relative;
+    top:50%;
+    @include border-radius(pxTorem(30px))
+  }
+  //超过免费次数
+  .d-member{
+    display: inline-block;
+    padding: 0 pxTorem(44px);
+    height: pxTorem(60px);
+    line-height: pxTorem(60px);
+    background-color: rgba(0,0,0,.6);
+    z-index: 20;
+    color: white;
+    position: relative;
+    //bottom:pxTorem(200px);
+    top:82%;
+    @include border-radius(pxTorem(30px));
+  }
+}
+
+//
+.d-popUp1,.d-popUp2,.d-popUp3,.d-popUp4{
+  display: none;
+}
+
+

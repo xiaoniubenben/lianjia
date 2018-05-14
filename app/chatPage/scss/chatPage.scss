@@ -1,0 +1,316 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "normalize";
+@import "core";
+@import "mixins";
+@import "iconfont";
+
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  -webkit-text-size-adjust: none;
+  background-color: $colBackground;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+//返回
+.cp-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  padding: 0 pxTorem(30px);
+  font-size: pxTorem(28px);
+  border-bottom: 1px solid $gray1;
+  background-color: white;
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  text-align: center;
+  .icon-zuojiantou{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+  .cp-function{
+    position: absolute;
+    top: 0;
+    right: pxTorem(30px);
+    .iconfont{
+      font-size: pxTorem(30px);
+      float: left;
+      margin-left: pxTorem(25px);
+      color: $fontCol1;
+    }
+  }
+  //span{
+  //  font-family: Consolas;
+  //  font-size: pxTorem(35px);
+  //}
+  img{
+    display: inline-block;
+    width: pxTorem(28px);
+    height: pxTorem(28px);
+    vertical-align: bottom;
+  }
+}
+
+//正文
+.chatPage{
+  padding: 0 pxTorem(30px);
+  padding-top: pxTorem(76px);
+  padding-bottom: pxTorem(100px);
+  background-color: $colBackground;
+  @include box-sizing(border-box);
+  .cp-time{
+    text-align: center;
+    margin-top: pxTorem(20px);
+    p{
+      display: inline-block;
+      padding: pxTorem(8px);
+      font-size: pxTorem(16px);
+      color: white;
+      background-color: #ccc;
+      @include border-radius(pxTorem(4px));
+    }
+  }
+  //第一条图片消息
+  .cp-mePic{
+    overflow: hidden;
+    margin-bottom: pxTorem(45px);
+    margin-top: pxTorem(20px);
+    .cp-portrait{
+      float: right;
+      width: pxTorem(72px);
+      height: pxTorem(72px);
+      @include border-radius(pxTorem(4px));
+    }
+
+    a{
+      float: right;
+      @include border-radius(pxTorem(4px));
+      position: relative;
+      //小三角
+      .cp-hiddenTriangle{
+        position: relative;
+        width: pxTorem(454px);
+        height: pxTorem(224px);
+        border-right: pxTorem(14px) solid transparent;
+        background: url("../image/fang.png") - pxTorem(14px) no-repeat;
+        background-size: cover;
+        -moz-background-clip: border;
+        -webkit-background-clip: border-box;
+        -o-background-clip: border-box;
+        background-clip: border-box;
+        .cp-triangle{
+          background: url("../image/fang.png") - pxTorem(28px) no-repeat;
+          position: absolute;
+          right:0;
+          top:pxTorem(25px);
+          div{
+            width: pxTorem(14px);
+            height: pxTorem(20px);
+            box-sizing:border-box;
+            border-top: pxTorem(14px) solid $colBackground;
+            border-bottom: pxTorem(14px) solid $colBackground;
+            /*border-left: pxTorem(14px) solid #0f0;*/
+            border-left: pxTorem(14px) solid transparent;
+            /* border-top-right-radius: 4px;
+             border-radius: 12px;*/
+          }
+        }
+        .cp-image{
+          overflow: hidden;
+        }
+      }
+      //细节
+      .cp-details{
+        background-color: white;
+        padding: pxTorem(20px);
+        width: pxTorem(440px);
+        @include box-sizing(border-box);
+        h4{
+          font-size: pxTorem(24px);
+          color: $fontCol1;
+          margin-bottom: pxTorem(16px);
+        }
+        p{
+          font-size: pxTorem(22px);
+          color: $fontCol2;
+          line-height: pxTorem(36px);
+          margin-bottom: pxTorem(16px);
+        }
+        span{
+          font-size: pxTorem(22px);
+          color: red;
+          margin-right: pxTorem(25px);
+        }
+        em{
+          font-style: normal;
+          font-size: pxTorem(22px);
+          color: $fontCol2;
+        }
+      }
+    }
+  }
+  //回复
+  .cp-you{
+    overflow: hidden;
+    margin-top: pxTorem(20px);
+    .cp-portrait{
+      float: left;
+      display: inline-block;
+      width: pxTorem(72px);
+      height: pxTorem(72px);
+      @include border-radius(pxTorem(4px));
+      vertical-align: middle;
+    }
+    div{
+      //width: pxTorem(298px);
+      //display: inline-block;
+      margin-left: pxTorem(92px);
+      font-size: pxTorem(22px);
+      color: $fontCol1;
+      vertical-align: middle;
+      @include border-radius(pxTorem(4px));
+      position: relative;
+      max-width: pxTorem(440px);
+      p{
+        display: inline-block;
+        background-color: white;
+        padding: pxTorem(22px) pxTorem(20px);
+      }
+      .cp-triangle{
+        position: absolute;
+        width:0;
+        height: 0;
+        border-bottom:pxTorem(14px) solid transparent;
+        border-right:pxTorem(14px) solid white;
+        border-top:pxTorem(14px) solid transparent;
+        float: right;
+        top: pxTorem(22px);
+        left:- pxTorem(12px);
+
+      }
+    }
+  }
+  //正常聊天的我的消息
+  .cp-me{
+    margin-top: pxTorem(20px);
+    overflow: hidden;
+    .cp-portrait{
+      float: right;
+      display: inline-block;
+      width: pxTorem(72px);
+      height: pxTorem(72px);
+      @include border-radius(pxTorem(4px));
+      vertical-align: middle;
+    }
+    div{
+      //width: pxTorem(298px);
+      //display: inline-block;
+      float: right;
+      margin-right: pxTorem(20px);
+      font-size: pxTorem(22px);
+      color: $fontCol1;
+      vertical-align: middle;
+      @include border-radius(pxTorem(4px));
+      position: relative;
+      max-width: pxTorem(440px);
+      p{
+        display: inline-block;
+        background-color: white;
+        padding: pxTorem(22px) pxTorem(20px);
+      }
+      .cp-triangle{
+        position: absolute;
+        width:0;
+        height: 0;
+        border-bottom:pxTorem(14px) solid transparent;
+        border-left:pxTorem(14px) solid white;
+        border-top:pxTorem(14px) solid transparent;
+        float: right;
+        top: pxTorem(22px);
+        right:- pxTorem(12px);
+      }
+    }
+  }
+}
+
+//输入框
+.cp-chatBox{
+  position: fixed;
+  bottom:0;
+  left:0;
+  background-color: white;
+  height: pxTorem(80px);
+  width: 100%;
+}
+
+//弹框
+.cp-popUp {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .6);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  //问题反馈
+  .cp-call {
+    width: pxTorem(520px);
+    height: pxTorem(172px);
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(- 50%, - 50%);
+    @include border-radius(pxTorem(8px));
+    padding: pxTorem(28px);
+    @include box-sizing(border-box);
+    font-size: pxTorem(22px);
+    p {
+      color: $fontCol1;
+      line-height: 1;
+    }
+    .cp-release {
+      position: absolute;
+      bottom: pxTorem(28px);
+      color: $fontCol1;
+      right: pxTorem(160px);
+    }
+    .cp-next {
+      position: absolute;
+      bottom: pxTorem(28px);
+      right: pxTorem(28px);
+      color: $colOrange;
+    }
+  }
+}
+.cp-popUp{
+  display: none;
+}

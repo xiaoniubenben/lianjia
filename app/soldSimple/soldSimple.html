@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买房</title>
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transtion=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-we.c-app-status-bar-style">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!--<script src="./js/flex.js"></script>-->
+    <link rel="stylesheet" href="./css/soldSimple.css">
+    <link rel="stylesheet" href="scss/soldSimple.scss">
+</head>
+<body>
+
+    <!--返回-->
+    <div class="ss-back">
+        <i class="iconfont icon-zuojiantou"></i>
+        <!--我要卖房-->
+        <a href="javascript:;"><i class="iconfont icon-jingshi"></i></a>
+    </div>
+    <div class="soldSimple">
+        <!--正文-->
+        <div class="ss-aboutHouse">
+            <!--标题-->
+            <h1>闪电卖房</h1>
+            <p>Selling Lightning</p>
+                <ul>
+                    <li>你的小区 <em><i class="iconfont icon-jiantou"></i></em> <span>请输入（烟台）小区</span></li>
+                    <li>您的面积 <i>平方米</i><input type="text" placeholder="请输入您的房屋面积"></li>
+                    <li>您的户型  <em> <i class="iconfont icon-jiantou"></i></em><span>请选择您的户型</span></li>
+                    <li>期望售价<i>万</i><input type="text" placeholder="请输入您的期望售价"></li>
+                </ul>
+            <!--<div class="ss-aboutMe">-->
+                <!--<ul>-->
+                    <!--<li>称呼<input type="text" placeholder="如何称呼您"></li>-->
+                    <!--<li>联系方式<input type="tel" placeholder="请输入您的联系方式"></li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        </div>
+        <!--<div class="ss-picMaifang">-->
+            <!--<i class="iconfont icon-maifang"></i>-->
+        <!--</div>-->
+        <button>确认发布</button>
+    </div>
+    <!--弹框-->
+    <!--问题反馈-->
+    <div class="ss-popUp1 ss-allCommonPop">
+        <div class="ss-feedback">
+            <p>完善房源信息有助于加快销售，是否继续完善？</p>
+            <a href="javascript:;" class="ss-release">直接发布</a>
+            <a href="javascript:;" class="ss-next">下一步</a>
+        </div>
+    </div>
+    <!--户型-->
+    <div class="ss-popUp2 ss-allCommonPop">
+        <div class="ss-houseType">
+           <div class="ss-choose">
+               <a href="javascript:;" class="ss-cancel">取消</a>
+               <a href="javascript:;" class="ss-contain">确定</a>
+           </div>
+            <div class="ss-type">
+                <div>
+                    <dl>
+                        <dt class="ss-active">请选择</dt>
+                        <dd>1室</dd>
+                        <dd>2室</dd>
+                        <dd>3室</dd>
+                        <dd>4室</dd>
+                        <dd>4室</dd>
+                        <dd>4室</dd>
+                        <dd>4室</dd>
+                    </dl>
+                </div>
+                <div>
+                    <dl>
+                        <dt class="ss-active">请选择</dt>
+                        <dd>0厅</dd>
+                        <dd>1厅</dd>
+                        <dd>1厅</dd>
+                        <dd>1厅</dd>
+                        <dd>1厅</dd>
+                        <dd>2厅</dd>
+                    </dl>
+                </div>
+                <div>
+                    <dl>
+                        <dt class="ss-active">请选择</dt>
+                        <dd>0卫</dd>
+                        <dd>1卫</dd>
+                        <dd>2卫</dd>
+                        <dd>3卫</dd>
+                        <dd>3卫</dd>
+                        <dd>3卫</dd>
+                        <dd>3卫</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--请输入小区-->
+    <div class="ss-popUp3 ss-extraPop">
+        <span class="ss-requirePlot">
+            请输入小区
+        </span>
+    </div>
+    <!--建议提示-->
+    <div class="ss-popUp4 ss-suggestPop">
+        <div class="ss-suggcont">
+            <div class="ss-suggestion">
+                <h3>房源发布技巧</h3>
+                <div class="ss-popLine"></div>
+                <p>
+                    1.小区：输入关键词后，请优先选择系统推荐小区，选择系统推荐小区可以查看定价参考信息。无系统推荐，也可手动输入。
+                </p>
+                <p>
+                    2.地址：准确填写楼栋、单元、门牌号，可以加速房源上架速度。
+                </p>
+                <p>
+                    3.期望售价：建议参考同小区相似户型最新成交信息。合理的价格，可以更快出售房源。
+                </p>
+                <p>
+                    4.如果您已在门店委托，请不要在线上重复委托，可直接到业主中心查看该房源。
+                </p>
+            </div>
+            <i class="iconfont icon-guanbi1"></i>
+        </div>
+
+    </div>
+
+    <script src="./js/zepto.js"></script>
+    <script src="./js/soldSimple.js"></script>
+</body>
+</html>

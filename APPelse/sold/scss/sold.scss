@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "normalize";
+@import "core";
+@import "mixins";
+
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#ccc;
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: white;
+}
+
+
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(112px);
+  line-height: 1;
+  padding-top: pxTorem(60px);
+  padding-left: pxTorem(40px);
+  padding-right: pxTorem(40px);
+  padding-bottom: pxTorem(16px);
+  font-size: pxTorem(28px);
+  color:$colDark;
+  border-bottom: 1px solid $colLight;
+  background-color: white;
+  @include box-sizing(border-box);
+  z-index: 10;
+  .backLeft{
+    float: left;
+    span{
+      font-family: Consolas;
+      font-size: pxTorem(35px);
+    }
+  }
+  .backRight{
+    float: right;
+    color: $colOrange;
+    font-size: pxTorem(28px);
+    span{
+      display: inline-block;
+      width: pxTorem(30px);
+      height: pxTorem(30px);
+      line-height: pxTorem(30px);
+      text-align: center;
+      border: 1px solid $colOrange;
+      @include border-radius(50%);
+    }
+  }
+
+  //img{
+  //  display: inline-block;
+  //  width: pxTorem(20px);
+  //  height: pxTorem(20px);
+  //}
+}
+.sold{
+  position: relative;
+  width:100%;
+  height:100%;
+
+  //我要卖房
+  .s-content{
+    position: absolute;
+    width: 100%;
+    top:50%;
+    transform:translateY(-50%);
+    padding:0 pxTorem(60px);
+    color: $colLight;
+    @include box-sizing(border-box);
+    h1{
+      font-size: pxTorem(60px);
+      line-height: pxTorem(30px);
+      color: $colDark;
+
+    }
+    //卖房详情
+    .s-details{
+      margin-top: pxTorem(80px);
+      li{
+        overflow: hidden;
+        border-bottom: 1px solid $colDark;
+      }
+      input{
+        text-align: right;
+      }
+      li:not(.s-position){
+        height: pxTorem(70px);
+        line-height: pxTorem(70px);
+      }
+      :-moz-placeholder {
+        text-align: right;
+      }
+      ::-moz-placeholder {
+        text-align: right;
+      }
+      :-ms-input-placeholder {
+        text-align: right;
+      }
+      ::-webkit-input-placeholder {
+        text-align: right;
+      }
+      input,i,em,span{
+        float: right;
+        font-style:normal;
+      }
+      i,em{
+        margin-left: pxTorem(8px);
+      }
+      em{
+        font-family:Consolas;
+        font-size: pxTorem(28px);
+      }
+      span{
+        color: #ccc;
+      }
+      //小区位置
+      .s-position{
+        em{
+          margin-top: pxTorem(16px);
+        }
+        :-moz-placeholder {
+          text-align: left;
+        }
+        ::-moz-placeholder {
+          text-align: left;
+        }
+        :-ms-input-placeholder {
+          text-align: left;
+        }
+        ::-webkit-input-placeholder {
+          text-align: left;
+        }
+        input{
+          height: pxTorem(70px);
+          float: left;
+          text-align: left;
+        }
+      }
+
+    //下一步
+      .s-nextStep{
+        //width:pxTorem(520px);
+        width:100%;
+        height: pxTorem(72px);
+        border:1px solid $colLight;
+        @include border-radius(10px);
+        text-align: center;
+        line-height: pxTorem(72px);
+        margin-top: pxTorem(65px);
+      }
+
+    }
+
+
+
+  }
+
+
+
+
+
+
+
+
+
+}
+

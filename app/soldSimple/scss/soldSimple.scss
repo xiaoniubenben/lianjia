@@ -1,0 +1,339 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.ss-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  font-size: pxTorem(28px);
+  border-bottom: 1px solid $gray1;
+  padding: 0 pxTorem(30px);
+  background-color: white;
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  .icon-zuojiantou{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+  a{
+    display: block;
+    height: pxTorem(76px);
+    width: pxTorem(40px);
+    text-align: right;
+    float: right;
+    position: absolute;
+    right:pxTorem(30px);
+    bottom: 0;
+    line-height: pxTorem(76px);
+    .icon-jingshi{
+      color: $colOrange;
+      font-size: pxTorem(28px);
+    }
+  }
+}
+
+.soldSimple{
+  height: 100%;
+  width: 100%;
+  padding-top: pxTorem(96px);
+  padding-bottom: pxTorem(84px);
+  @include box-sizing(border-box);
+    h1{
+      font-size: pxTorem(64px);
+      line-height: 1;
+      padding-top: pxTorem(60px);
+      color: $fontCol1;
+      margin: pxTorem(20px) 0;
+    }
+    p{
+      font-size: pxTorem(20px);
+      color: $fontCol1;
+    }
+    //.ss-aboutMe
+    .ss-aboutHouse{
+      font-size: pxTorem(22px);
+      color: $fontCol1;
+      background-color: white;
+      padding: 0 pxTorem(30px);
+      @include box-sizing(border-box);
+      ul{
+        margin-top: pxTorem(40px);
+      }
+      li{
+        line-height: pxTorem(76px);
+        border-bottom: 1px solid $gray1;
+        @include box-sizing(border-box);
+      }
+      input{
+        text-align: right;
+        color: $fontCol1;
+      }
+      input::-webkit-input-placeholder{
+        text-align: right;
+      }
+      input:-moz-placeholder {
+        text-align: right;
+      }
+      input::-moz-placeholder {
+        text-align: right;
+      }
+      input:-ms-input-placeholder{
+        text-align: right;
+      }
+      input,span,em,i{
+        float: right;
+      }
+      i{
+        font-style: normal;
+        color: $fontCol1;
+        margin-left: pxTorem(8px);
+      }
+      span{
+        color: #ccc;
+      }
+      em{
+        font-size: pxTorem(38px);
+        font-style: normal;
+        color: $fontCol2;
+        .icon-jiantou{
+          font-size: pxTorem(22px);
+          color: #888;
+        }
+      }
+    }
+
+  }
+  //.ss-picMaifang{
+  //  margin: pxTorem(108px) auto;
+  //  text-align: center;
+  //  .icon-maifang{
+  //    font-size: pxTorem(160px);
+  //    color: $gray1;
+  //  }
+  //}
+  button{
+    position: fixed;
+    height: pxTorem(84px);
+    line-height: pxTorem(84px);
+    width: 100%;
+    text-align: center;
+    background-color: $colOrange;
+    color: white;
+    font-size: pxTorem(26px);
+    bottom:0;
+    left:0;
+  }
+
+
+
+//弹框
+.ss-allCommonPop{
+  //display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 20;
+  //问题反馈
+  .ss-feedback{
+    width: pxTorem(520px);
+    height: pxTorem(172px);
+    background-color: white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(- 50%,- 50%);
+    @include border-radius(pxTorem(8px));
+    padding: pxTorem(28px);
+    @include box-sizing(border-box);
+    font-size: pxTorem(22px);
+    p{
+      color: $fontCol1;
+      line-height: 1;
+    }
+    .ss-release{
+       position: absolute;
+       bottom:pxTorem(28px);
+       color: $fontCol1;
+       right:pxTorem(134px);
+     }
+    .ss-next{
+      position: absolute;
+      bottom:pxTorem(28px);
+      right: pxTorem(28px);
+      color: #0d93d8;
+    }
+  }
+  //户型
+  .ss-houseType{
+    width: 100%;
+    height: pxTorem(430px);
+    background-color: white;
+    position: absolute;
+    bottom:0;
+    left:0;
+    font-size: pxTorem(22px);
+    .ss-choose{
+      height: pxTorem(72px);
+      line-height: pxTorem(72px);
+      background-color: #fafafa;
+      padding: 0 pxTorem(30px);
+      border-bottom: 1px solid $gray1;
+      @include box-sizing(border-box);
+      font-size: pxTorem(24px);
+      .ss-cancel{
+        float: left;
+        color: $fontCol2;
+      }
+      .ss-contain{
+        float: right;
+        color: $colOrange;
+      }
+    }
+    .ss-type{
+      height: pxTorem(360px);
+      &>div{
+        height: 100%;
+        overflow: hidden;
+        overflow-y: auto;
+        float: left;
+        width: 33.333%;
+      }
+      dl{
+        text-align: center;
+        dd,dt{
+          height: pxTorem(71px);
+          line-height: pxTorem(71px);
+          border: 1px solid $gray1;
+          border-top: none;
+          color: $fontCol1;
+        }
+        .ss-active{
+          color: $colOrange;
+        }
+      }
+    }
+  }
+}
+//建议提示弹框
+.ss-suggestPop{
+  width: 100%;
+  height: 100%;
+  background-color: #616161;
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 20;
+  .ss-suggcont{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  .ss-suggestion{
+    position: absolute;
+    width: 80%;
+    left:50%;
+    transform: translateX(- 50%);
+    color: white;
+    padding-top: pxTorem(120px);
+    @include box-sizing(border-box);
+    h3{
+      font-size: pxTorem(36px);
+      text-align: center;
+    }
+    .ss-popLine{
+      height: 2px;
+      width: 100%;
+      background-color: white;
+      margin: pxTorem(60px) 0;
+    }
+    p{
+      font-size: pxTorem(26px);
+      line-height: pxTorem(36px);
+      margin-bottom: pxTorem(30px);
+    }
+  }
+  .icon-guanbi1{
+    position: absolute;
+    bottom:pxTorem(100px);
+    left:50%;
+    transform: translateX(- 50%);
+    font-size: pxTorem(80px);
+    color: white;
+  }
+}
+
+.ss-extraPop{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  font-size: pxTorem(20px);
+  //超过免费次数
+  .ss-requirePlot{
+    display: inline-block;
+    padding: 0 pxTorem(44px);
+    height: pxTorem(60px);
+    line-height: pxTorem(60px);
+    background-color: rgba(0,0,0,.6);
+    z-index: 20;
+    color: white;
+    position: relative;
+    top:82%;
+    @include border-radius(pxTorem(30px));
+  }
+}
+.ss-popUp1,.ss-popUp2,.ss-popUp3,.ss-popUp4{
+  display: none;
+}
+
+
+

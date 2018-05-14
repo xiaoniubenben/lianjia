@@ -1,0 +1,780 @@
+@charset "UTF-8";
+@import "normalize";
+@import "mixins";
+@import "core";
+
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  background-color: white;
+}
+p{
+  margin: 0;
+  padding: 0;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+$navColor:#5d5d5d;
+$org:#eb6300;
+$grayLight:#d3d3d3;
+$aboutUs:#5e605f;
+
+//公共头部
+.common-topBar{
+  height: 120px;
+  background-color: $navColor;
+  padding-top: 45px;
+  @include box-sizing(border-box);
+  .common-nav{
+    //height: 100%;
+    width: 1280px;
+    margin: 0 auto;
+  }
+  .navLeft{
+    float: left;
+    .logo{
+      float: left;
+      margin-right: 20px;
+    }
+    .location{
+      float: left;
+      width: 50px;
+      height: 50px;
+      margin-top: -10px;
+      background-color: white;
+      @include border-radius(50%);
+      text-align: center;
+      img{
+        margin-top: 5px;
+        display: inline-block;
+        height: 18px;
+        width: 18px;
+      }
+      p{
+        line-height: 18px;
+        font-size: 12px;
+      }
+    }
+  }
+  .navRight{
+    float: right;
+    line-height: 1;
+    a{
+      float: left;
+    }
+    .search{
+      display: inline-block;
+      margin-top: 5px;
+      margin-right: 20px;
+      float: left;
+      width: 200px;
+      height: 70px;
+      position: relative;
+      cursor: pointer;
+      img{
+        float: right;
+        width: 24px;
+        height: 24px;
+      }
+      ul{
+        position: absolute;
+        top:70px;
+        left: 0;
+        background-color: white;
+        width: 200px;
+        padding: 10px 0;
+        display: none;
+        li{
+          padding-left: 20px;
+          @include box-sizing(border-box);
+          a{
+            padding: 10px 0;
+            display: block;
+            width: 100%;
+            color: #666;
+            font-size: 16px;
+          }
+        }
+      }
+      &:hover{
+        ul{
+          display: block;
+          a:hover{
+            color: $org;
+          }
+        }
+      }
+    }
+    //未登录
+    //.personCenter{
+    //  float: right;
+    //  a{
+    //    color: white;
+    //    font-size: 18px;
+    //    padding: 5px;
+    //
+    //  }
+    //  a:last-child{
+    //    padding-right: 0;
+    //  }
+    //  .login{
+    //    width: 60px;
+    //  }
+    //  img{
+    //    display: inline-block;
+    //    width: 16px;
+    //    height: 27px;
+    //    vertical-align: top;
+    //    margin-top: -5px;
+    //  }
+    //}
+    //已登录
+    .personal{
+      float: right;
+      a{
+        color: white;
+        font-size: 18px;
+        padding: 5px;
+
+      }
+      a:last-child{
+        padding-right: 0;
+      }
+      .login{
+        width: 60px;
+      }
+      img{
+        display: inline-block;
+        width: 16px;
+        height: 27px;
+        vertical-align: top;
+        margin-top: -5px;
+      }
+    }
+  }
+
+}
+
+//中间内容
+.personalCenter{
+  width: 1280px;
+  margin:0 auto;
+  padding: 90px 0;
+  overflow: hidden;
+  //左边tab
+  .p-leftTab{
+    float: left;
+    width: 255px;
+    border: 1px solid $grayLight;
+    .p-portrait{
+      width: 255px;
+      height: 240px;
+      border-bottom: 1px solid $grayLight;
+      padding-top: 34px;
+      @include box-sizing(border-box);
+      text-align: center;
+      color: $aboutUs;
+      img{
+        width: 114px;
+        height: 114px;
+        @include border-radius(50%);
+        margin:0 auto;
+        margin-bottom:34px;
+        border:1px solid $grayLight;
+      }
+      p{
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+      }
+    }
+    a{
+      padding: 20px 0;
+      width: 100%;
+      display: block;
+      color: $aboutUs;
+      padding-left:60px;
+      @include box-sizing(border-box);
+      font-size: 20px;
+    }
+    .p-active{
+      background-color: $org;
+      a{
+        color:white;
+      }
+    }
+  }
+  //右边内容
+  .p-rightCont{
+    float: right;
+    width: 918px;
+    &>div{
+      display: none;
+    }
+    //控制显示隐藏
+    .p-disBlock{
+      display: block;
+    }
+
+  //我的pk
+    .p-pk{
+      //参加pk的房源
+      .p-pkHouse{
+        margin-bottom: 30px;
+        .p-oneHouse{
+          display: inline-block;
+          position: relative;
+          width: 110px;
+          height: 110px;
+          margin-right: 27px;
+          margin-bottom: 0;
+          img{
+            width: 110px;
+            height: 110px;
+            @include border-radius(6px);
+          }
+          span{
+            position: absolute;
+            top:-10px;
+            right:-13px;
+            display: block;
+            width: 26px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            background-color: $org;
+            @include border-radius(50%);
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            font-family: "microsoft Yahei";
+          }
+        }
+        .p-addHouse{
+          display: inline-block;
+          width: 110px;
+          height: 114px;
+          border: 1px solid #9a9a9a;
+          @include border-radius(6px);
+          text-align: center;
+          color: #9a9a9a;
+          padding-top: 15px;
+          @include box-sizing(border-box);
+          vertical-align: top;
+          span{
+            font-size: 50px;
+            line-height: 1;
+          }
+          p{
+            font-size: 16px;
+          }
+        }
+      }
+      //表格pk
+
+      .p-basicInformation{
+        h5{
+        font-size: 20px;
+        color: $aboutUs;
+        background-color: #e9e9e9;
+        width: 100%;
+        height: 50px;
+        line-height: 50px;
+        padding-left: 35px;
+        @include box-sizing(border-box);
+        font-weight: normal;
+      }
+        table{
+          width: 535px;
+          border: 1px solid $grayLight;
+          background-color: #f7f7f7;
+          margin-top: 10px;
+          td{
+            padding: 15px 25px;
+            border: 1px solid $grayLight;
+            font-size: 15px;
+            color: $aboutUs;
+            vertical-align: middle;
+          }
+          td:first-child{
+            width: 160px;
+            font-size: 20px;
+            color: $aboutUs;
+            padding-left: 30px;
+            background-color: white;
+            border-left: none;
+            @include box-sizing(border-box);
+          }
+          .p-col{
+            background-color: white;
+          }
+
+        }
+      }
+    }
+    //历史浏览记录  关注的房源 发布的房源
+    .p-history,.p-release,.p-attention{
+      h3{
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        margin-bottom: 40px;
+        span{
+          color: $org;
+          font-family: "microsoft Yahei";
+        }
+      }
+      ul{
+        border-top: 2px solid #7b7b7b;
+        li{
+          padding: 45px 0;
+          border-bottom: 1px solid $grayLight;
+          overflow: hidden;
+        }
+      }
+      .p-historyLeft{
+        float: left;
+        position: relative;
+        margin-right: 25px;
+        img{
+          width: 170px;
+          height: 130px;
+        }
+        p{
+          display: block;
+          position: absolute;
+          width: 50px;
+          height: 50px;
+          line-height: 50px;
+          @include border-radius(50%);
+          background-color: $org;
+          font-size: 16px;
+          color: white;
+          bottom:5px;
+          right:5px;
+          text-align: center;
+        }
+        span{
+          font-size: 12px;
+        }
+      }
+      .p-historyRight{
+        float: left;
+        position: relative;
+        height: 130px;
+        width:720px;
+        h4{
+          color: #5c5a5b;
+          font-size: 25px;
+          margin-bottom: 5px;
+        }
+        p{
+          font-size: 17px;
+          color: #858585;
+        }
+      }
+      .p-feature{
+        position: absolute;
+        bottom:0;
+        width: 100%;
+        float: left;
+        color: white;
+        .p-d1,.p-d2,.p-d3{
+          display: inline-block;
+          width: 37px;
+          height: 37px;
+          @include border-radius(50%);
+          font-size: 12px;
+          position: relative;
+
+        }
+        .p-dd1,.p-dd2,.p-dd3{
+          line-height: 1;
+          position: absolute;
+          top:50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+          width: 24px;
+          border: none;
+        }
+        .p-d1{
+          background-color: #01a29a;
+        }
+        .p-d2{
+          background-color: #d3612f;
+        }
+        .p-d3{
+          background-color: #d7c444;
+        }
+
+      }
+      .p-choose{
+        position: absolute;
+        top:0;
+        right:0;
+        input[type=checkbox]{
+          vertical-align: middle;
+          /*同样，首先去除浏览器默认样式*/
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          appearance: none;
+          /*编辑我们自己的样式*/
+          position: relative;
+          width: 30px;
+          height: 30px;
+          background: transparent;
+          border:1px solid $org;
+          @include border-radius(50%);
+          outline: none;
+          cursor: pointer;
+        }
+        input[type=checkbox]:after{
+          content: '√';
+          position: absolute;
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: $org;
+          color: #fff;
+          text-align: center;
+          line-height: 30px;
+          /*增加动画*/
+          //-webkit-transition: all ease-in-out 300ms;
+          //-moz-transition: all ease-in-out 300ms;
+          //transition: all ease-in-out 300ms;
+          /*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+          @include border-radius(50%);
+          opacity: 0;
+        }
+        input[type=checkbox]:checked:after{
+          @include border-radius(50%);
+          opacity: 1;
+        }
+        span{
+          vertical-align: middle;
+          display: inline-block;
+          cursor: pointer;
+          width: 30px;
+          height: 30px;
+          line-height: 30px;
+          text-align: center;
+          border: 1px solid #4b494a;
+          color: #4b494a;
+          font-size: 24px;
+          @include border-radius(50%);
+          @include box-sizing(border-box);
+        }
+        }
+
+    }
+    //我的预约  收到的预约
+    .p-myBookings,.p-receivedBookings{
+      h3{
+        font-size: 30px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        margin-bottom: 40px;
+        span{
+          color: $org;
+          font-family: "microsoft Yahei";
+        }
+      }
+      ul{
+        border-top: 2px solid #7b7b7b;
+        li{
+          height: 150px;
+          border-bottom: 1px solid $grayLight;
+          overflow: hidden;
+          p{
+            color: $aboutUs;
+            font-size: 16px;
+            margin-top: 22px;
+          }
+        }
+        .p-operation{
+          width: 100%;
+          height: 110px;
+          line-height: 90px;
+        }
+        .p-operationLeft{
+          float: left;
+          a{
+            float: left;
+            vertical-align: middle;
+            margin-right: 50px;
+            color: $aboutUs;
+            font-size: 19px;
+          }
+          img{
+            display: inline-block;
+            height: 22px;
+            width: 26px;
+            vertical-align: middle;
+            margin-right: 15px;
+          }
+        }
+        .p-operationRight{
+          height: 110px;
+          float: right;
+          span{
+            vertical-align: middle;
+            display: inline-block;
+            cursor: pointer;
+            width: 25px;
+            height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border: 1px solid #4b494a;
+            color: #4b494a;
+            font-size: 24px;
+            @include border-radius(50%);
+            @include box-sizing(border-box);
+          }
+        }
+      }
+    }
+    //交易记录
+    .p-tradingRecord{
+      li{
+        height: 70px;
+        margin-bottom: 72px;
+      }
+      li:last-child{
+        margin-bottom: 0;
+      }
+      //如果可以点击加a标签样式
+      a{
+        display: block;
+        color: black;
+        width: 100%;
+        height: 100%;
+      }
+
+      .p-tradeLeft{
+        float: left;
+        p{
+          font-size: 22px;
+          font-weight: 500;
+          margin-bottom: 20px;
+        }
+        span{
+          color: $aboutUs;
+          font-size: 16px;
+        }
+      }
+      .p-tradeRight{
+        line-height: 70px;
+        float: right;
+        color: $org;
+        font-size: 24px;
+        span{
+          font-size: 37px;
+        }
+      }
+    }
+    //个人资料
+    .p-personalData{
+        //上传头像
+      .p-choosePic{
+        position: relative;
+        display: block;
+        width: 235px;
+        height: 235px;
+        border: 1px solid $grayLight;
+        color: $grayLight;
+        text-align: center;
+        margin-bottom: 20px;
+        @include box-sizing(border-box);
+        input[type=file]{
+          width: 235px;
+          height: 235px;
+          opacity: 0;
+        }
+        .p-newFile{
+          position: absolute;
+          top:0;
+          left:0;
+          width: 235px;
+          height: 235px;
+          p{
+            height: 55px;
+            line-height: 55px;
+            width: 100%;
+            border-bottom: 1px solid $grayLight;
+            @include box-sizing(border-box);
+          };
+          a{
+            display: block;
+            height: 180px;
+            width: 100%;
+            line-height: 165px;
+            font-size: 70px;
+            color: $org;
+          }
+        }
+
+      }
+      //编辑个人信息
+      .p-editPersonal{
+        width: 300px;
+        div{
+          position: relative;
+        }
+        input{
+          width: 200px;
+          height: 50px;
+          line-height: 50px;
+        }
+        img{
+          position: absolute;
+          right:0;
+          top:10px;
+          width: 28px;
+          height: 28px;
+        }
+      }
+    }
+  //消息
+    .p-news{
+      overflow: hidden;
+      li{
+        border-bottom: 1px solid $grayLight;
+        overflow: hidden;
+      }
+      a{
+        display: block;
+        width: 100%;
+        overflow: hidden;
+        padding: 20px 0;
+      }
+      li:first-child{
+        a{
+          padding-top: 10px;
+        }
+      }
+      .p-leftCon{
+        float: left;
+        margin-right: 45px;
+        position: relative;
+        img{
+          width: 96px;
+          height: 96px;
+          @include border-radius(6px);
+        }
+        div{
+          position: absolute;
+          top:-19px;
+          right:-19px;
+          width: 38px;
+          height: 38px;
+          background-color: white;
+          @include border-radius(50%);
+          span{
+            position: absolute;
+            top:11px;
+            right:11px;
+            display: block;
+            width: 22px;
+            height: 22px;
+            background-color: $org;
+            @include border-radius(50%);
+          }
+        }
+      }
+      .p-rightCon{
+        float: left;
+        color: $aboutUs;
+        font-size: 20px;
+        width:777px;
+        p{
+          margin-bottom: 10px;
+        }
+        span{
+          font-size: 18px;
+          //超出一行显示省略号
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 1;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}
+
+//公共尾部
+.common-footer{
+  margin: 0 auto;
+  width: 1280px;
+  padding-top: 70px;
+  border-top:1px solid #d6d7d7;
+//关于我们
+  .aboutUs{
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 70px;
+    a{
+    color: #666;
+    font-size: 16px;
+  }
+    ul{
+      float: left;
+      margin-right: 100px;
+    }
+    li{
+      line-height: 36px;
+      color: #666;
+    }
+  }
+//二维码
+  .QR{
+    float: right;
+    img{
+      width: 121px;
+      height: 121px;
+    }
+    a{
+      display: block;
+      margin-bottom: 20px;
+      img{
+        width: 120px;
+        height: 37px;
+      }
+    }
+  }
+  //文字描述
+  .footerText{
+    float: right;
+    width: 240px;
+    margin-left: 40px;
+    p{
+      color: #666;
+      font-size: 16px;
+      line-height: 30px;
+    }
+  }
+
+//版权声明
+  .right{
+    border-top: 1px solid #d6d7d7;
+    margin-bottom:100px;
+    p{
+      margin-top: 20px;
+      font-size: 15px;
+      color: #666666;
+      line-height: 1;
+    }
+  }
+}

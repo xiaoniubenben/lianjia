@@ -1,0 +1,175 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.mo-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  font-size: pxTorem(28px);
+  padding: 0 pxTorem(30px);
+  border-bottom: 1px solid $gray1;
+  background-color: white;
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  text-align: center;
+  .icon-zuojiantou{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+  a{
+    bottom: pxTorem(25px);
+    right: pxTorem(30px);
+    line-height: 1;
+    position: absolute;
+    i{
+      font-size: pxTorem(26px);
+      color: $fontCol1;
+    }
+  }
+}
+
+.myOrder{
+  padding-top: pxTorem(76px);
+  padding-bottom: pxTorem(20px);
+  @include box-sizing(border-box);
+  background-color: $colBackground;
+  li{
+    height: pxTorem(200px);
+    position: relative;
+    padding: 0 pxTorem(30px);
+    padding-top: pxTorem(20px);
+    background-color: white;
+    margin-bottom: pxTorem(20px);
+    @include box-sizing(border-box);
+    //预约房详情
+    .mo-orderHouse{
+      display: block;
+      height: pxTorem(100px);
+      width: 100%;
+      margin-bottom: pxTorem(20px);
+      position: relative;
+      img{
+        width: pxTorem(135px);
+        height: pxTorem(100px);
+        float: left;
+      }
+      .mo-details{
+        margin-left: pxTorem(155px);
+        height: pxTorem(100px);
+        p{
+          font-size: pxTorem(26px);
+          color: $fontCol1;
+          line-height: 1;
+        }
+        span{
+          display: block;
+          font-size: pxTorem(20px);
+          color: $fontCol1;
+          line-height: 1;
+          margin: pxTorem(12px) 0;
+        }
+        i{
+          font-size: pxTorem(26px);
+          font-style: normal;
+          line-height: 1;
+          color: #888;
+          position: absolute;
+          top:50%;
+          transform: translateY(- 50%);
+          right:0;
+        }
+        .mo-d1,.mo-d2,.mo-d3{
+          display: inline-block;
+          float: left;
+          padding: pxTorem(6px) pxTorem(8px);
+          @include border-radius(4px);
+          font-size: pxTorem(16px);
+          margin-right: pxTorem(6px);
+          line-height: 1;
+        }
+        .mo-d1{
+          background-color: #ffe5d3;
+          color: $colOrange;
+        }
+        .mo-d2{
+          background-color: #cffbff;
+          color: #84d6e2;
+        }
+        .mo-d3{
+          background-color: #fdf1e0;
+          color: #f19a21;
+        }
+      }
+    }
+    //预约时间
+    .mo-orderTime{
+      height: pxTorem(60px);
+      line-height: pxTorem(60px);
+      border-top:1px solid $gray1;
+      span{
+        float: left;
+        font-size: pxTorem(22px);
+        color: $fontCol1;
+      }
+      a{
+        float: right;
+        font-size: pxTorem(22px);
+        color: $fontCol2;
+      }
+      .mo-cancel{
+        color: $colOrange;
+      }
+    }
+
+  }
+}
+
+
+
+
+
+

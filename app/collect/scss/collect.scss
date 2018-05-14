@@ -1,0 +1,504 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  //background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+
+
+.collect{
+ //头部固定导航
+  padding-top: pxTorem(76px);
+  padding-bottom: pxTorem(200px);
+  height: 100%;
+  background-color: $colBackground;
+  overflow-y: auto;
+  @include box-sizing(border-box);
+  .c-nav{
+    position: fixed;
+    top:0;
+    left:0;
+    height:pxTorem(76px);
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+
+    }
+    //筛选条件
+    .c-filtrate{
+      position: absolute;
+      bottom:0;
+      left:0;
+      width: 100%;
+      padding-left:pxTorem(30px);
+      @include box-sizing(border-box);
+      ul{
+        height: pxTorem(76px);
+        line-height:pxTorem(76px);
+        li{
+          text-align: center;
+          height: 100%;
+          float: left;
+          width: 25%;
+          a{
+            color:$fontCol1;
+            position: relative;
+          }
+          img{
+            margin-left: pxTorem(10px);
+            display: inline-block;
+            width:pxTorem(20px);
+            height:pxTorem(10px);
+          }
+          span{
+            position: absolute;
+            width:0;
+            height: 0;
+            border-right:pxTorem(7px) solid transparent;
+            border-left:pxTorem(7px) solid transparent;
+            border-top:pxTorem(12px) solid $colDark;
+            top:  pxTorem(8px);
+            right:- pxTorem(24px);
+          }
+        }
+        .c-active{
+          span{
+            border-top:pxTorem(12px) solid $colOrange;
+          }
+          color: $colOrange;
+        }
+      }
+
+    }
+  }
+
+
+
+//  内容
+  .c-content{
+    //height: 100%;
+    padding:pxTorem(23px) pxTorem(30px);
+    padding-bottom:0;
+    background-color: $colBackground;
+    @include box-sizing(border-box);
+    overflow: hidden;
+    //overflow-y: auto;
+    ul{
+      //height: 100%;
+      //width: pxTorem(640px);
+      //overflow: hidden;
+      //display: flex;
+      //flex-wrap:wrap;
+      //align-content: flex-start;
+
+      //li{
+      //  padding:pxTorem(20px) pxTorem(25px);
+      //  margin-bottom: pxTorem(20px);
+      //  margin-right: pxTorem(20px);
+      //  background-color: white;
+      //  width: pxTorem(280px);
+      //  @include border-radius(8px);
+      //  @include box-sizing(border-box);
+      //}
+      column-count: 2;
+      -webkit-column-count: 2;
+      -o-column-count: 2;
+      -ms-column-count: 2;
+      -moz-column-count: 2;
+
+      li{
+        -moz-page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid;
+        counter-increment: item-counter;
+        padding:pxTorem(20px) pxTorem(25px);
+        margin-bottom: pxTorem(20px);
+        //margin-right: pxTorem(20px);
+        background-color: white;
+        width: pxTorem(280px);
+        float: left;
+        @include border-radius(8px);
+        @include box-sizing(border-box);
+      }
+      //li:nth-child(1),li:nth-child(2){
+      //  margin-top: pxTorem(0px);
+      //}
+      //上半部分细节介绍
+      .c-details{
+        width: 100%;
+        border-bottom:1px solid $gray1;
+        margin-bottom: pxTorem(15px);
+        overflow: hidden;
+        h1{
+          padding: 0;
+          margin: 0;
+          line-height: pxTorem(35px);
+          font-size: pxTorem(26px);
+          color: $fontCol1;
+        }
+        p{
+          font-size: pxTorem(18px);
+          color: $fontCol2;
+        }
+        .c-feature{
+          width: 100%;
+          margin: pxTorem(10px) 0;
+          overflow: hidden;
+          .c-d1,.c-d2,.c-d3{
+            float: left;
+            padding: pxTorem(6px) pxTorem(8px);
+            @include border-radius(4px);
+            font-size: pxTorem(16px);
+            margin-right: pxTorem(6px);
+            line-height: 1;
+          }
+          .c-d1{
+            background-color: #ffe5d3;
+            color: $colOrange;
+          }
+          .c-d2{
+            background-color: #cffbff;
+            color: #84d6e2;
+          }
+          .c-d3{
+            background-color: #fdf1e0;
+            color: #f19a21;
+          }
+          //认证小图片
+          .c-authentication{
+            height: pxTorem(35px);
+            margin:auto;
+            float: right;
+            img{
+              display: inline-block;
+              vertical-align: middle;
+              width: pxTorem(40px);
+              height: pxTorem(18px);
+            }
+
+          }
+        }
+
+
+
+
+
+
+      }
+
+      //下半部分图片
+      .c-picture{
+        width: 100%;
+        img{
+          width: 100%;
+          height: pxTorem(183px);
+        }
+        .c-price{
+          position: relative;
+
+          div{
+            color:white;
+            position: absolute;
+            bottom:pxTorem(10px);
+            right:pxTorem(10px);
+            width: pxTorem(60px);
+            height: pxTorem(60px);
+            line-height: pxTorem(60px);
+            text-align: center;
+            @include border-radius(50%);
+            background-color: #eb6100;
+            font-size: pxTorem(10px);
+            span{
+              font-size: pxTorem(20px);
+            }
+          }
+        }
+        p{
+          font-size: pxTorem(18px);
+          color: $fontCol2;
+          margin-top: pxTorem(10px);
+          span{
+            color: $colOrange;
+          }
+        }
+        .c-choosePk{
+          overflow: hidden;
+          margin-top: pxTorem(6px);
+          vertical-align: middle;
+          input[type=checkbox]{
+            margin-top: pxTorem(2px);
+            vertical-align: middle;
+            margin-right: pxTorem(16px);
+            /*同样，首先去除浏览器默认样式*/
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            /*编辑我们自己的样式*/
+            position: relative;
+            width: pxTorem(26px);
+            height: pxTorem(26px);
+            background: transparent;
+            border:1px solid $fontCol2;
+            @include border-radius(50%);
+            outline: none;
+            cursor: pointer;
+            //@include box-sizing(border-box);
+          }
+          //√
+
+          input[type=checkbox]:after{
+            content: '✔';
+            //position: absolute;
+            display: block;
+            width: 100%;
+            height: 100%;
+            //top:-1px;
+            //left:-1px;
+            background: $colOrange;
+            //border: 1px solid $colOrange;
+            color: #fff;
+            text-align: center;
+            font-size: pxTorem(16px);
+            line-height: pxTorem(26px);
+            /*增加动画*/
+            //-webkit-transition: all ease-in-out 300ms;
+            //-moz-transition: all ease-in-out 300ms;
+            //transition: all ease-in-out 300ms;
+            /*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+            @include border-radius(50%);
+            opacity: 0;
+            //@include box-sizing(border-box);
+          }
+          input[type=checkbox]:checked:after{
+            @include border-radius(50%);
+            opacity: 1;
+          }
+          input,a{
+            float: right;
+          }
+          a{
+            color: $fontCol2;
+            line-height:1;
+            .icon-guanbi1{
+              font-size: pxTorem(30px);
+            }
+          }
+
+        }
+      }
+
+
+    }
+
+
+
+
+  }
+//下面小箭头和pk
+.c-more{
+//  .c-arrow{
+//    span{
+//      position: relative;
+//      width:0;
+//      height: 0;
+//      border-right:pxTorem(14px) solid transparent;
+//      border-left:pxTorem(14px) solid transparent;
+//      border-top:pxTorem(14px) solid $colDark;
+//      float: right;
+//      top: pxTorem(5px);
+//      right:pxTorem(280px);
+//    }
+//    em{
+//      position: absolute;
+//      top:- pxTorem(19px);
+//      right:- pxTorem(14px);
+//      width:0;
+//      height: 0;
+//      border-right:pxTorem(14px) solid transparent;
+//      border-left:pxTorem(14px) solid transparent;
+//      border-top:pxTorem(14px) solid #DADADB;
+//    }
+//
+//  }
+  .c-pk{
+    position: fixed;
+    bottom:pxTorem(120px);
+    right: pxTorem(20px);
+    width: pxTorem(75px);
+    height: pxTorem(75px);
+    background-color: $colOrange;
+    @include border-radius(50%);
+    @include box-sizing(border-box);
+    text-align: center;
+    color:white;
+    .c-cont{
+      position: absolute;
+      top:50%;
+      left:50%;
+      transform: translate(-50%,-50%);
+      line-height: 1;
+      width: pxTorem(56px);
+      i{
+        font-style:normal;
+        font-size: pxTorem(28px);
+        font-weight: bold;
+        line-height: 1;
+      }
+      span{
+        font-size: pxTorem(16px);
+        line-height: 1;
+      }
+    }
+  }
+}
+//弹框，最多选择四个房源
+.c-extraPop{
+  position: fixed;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  font-size: pxTorem(20px);
+  .c-attention{
+    display: inline-block;
+    padding: 0 pxTorem(44px);
+    height: pxTorem(60px);
+    line-height: pxTorem(60px);
+    background-color: rgba(0,0,0,.6);
+    z-index: 20;
+    color: white;
+    position: relative;
+    top:50%;
+    @include border-radius(pxTorem(30px))
+  }
+}
+//确定删除弹框
+.c-CommonPop{
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.6);
+  position: fixed;
+  left:0;
+  top:0;
+  z-index: 20;
+  .c-feedback{
+    width: pxTorem(520px);
+    height: pxTorem(172px);
+    background-color: white;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(- 50%,- 50%);
+    @include border-radius(pxTorem(8px));
+    padding: pxTorem(28px);
+    @include box-sizing(border-box);
+    font-size: pxTorem(22px);
+    p{
+      color: $fontCol1;
+      line-height: 1;
+    }
+    .c-delect{
+      position: absolute;
+      bottom:pxTorem(28px);
+      color: $fontCol1;
+      right:pxTorem(134px);
+    }
+    .c-sure{
+      position: absolute;
+      bottom:pxTorem(28px);
+      right: pxTorem(28px);
+      color: #0d93d8;
+    }
+  }
+}
+
+.c-popUp1,.c-popUp2{
+  display: none;
+}
+//底部footer
+.c-footer{
+  width: 100%;
+  position: fixed;
+  height:pxTorem(100px);
+  background-color: white;
+  left:0;
+  bottom:0;
+  font-size: pxTorem(22px);
+  border-top: 1px solid $gray1;
+  @include box-sizing(border-box);
+  ul{
+    li{
+      float: left;
+      width: 25%;
+      height:pxTorem(100px);
+      position: relative;
+      a{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(- 50%,-50%);
+        width:100%;
+        color:$fontCol2;
+        text-align: center;
+      }
+      span{
+        line-height: 1;
+      }
+      i{
+        font-size: pxTorem(40px);
+        color: $fontCol2;
+        display: block;
+        margin-bottom: pxTorem(6px);
+      }
+      .icon-shoucang{
+        color: $colOrange;
+      }
+    }
+    .c-attention a{
+      color: $colOrange;
+    }
+
+
+  }
+}
+
+

@@ -1,0 +1,820 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>我的房子</title>
+    <link rel="stylesheet" href="./css/findHouse.css">
+</head>
+<body>
+    <!--公共头部-->
+    <div class="common-topBar">
+        <div class="common-nav">
+            <div class="navLeft">
+                <a href="javascript:;" class="logo">
+                    <img src="./image/logo.png" alt="">
+                </a>
+                <div class="location">
+                    <img src="./image/headmap.png" alt="">
+                    <p>烟台</p>
+                </div>
+            </div>
+            <div class="navRight">
+                <div class="search">
+                    <img src="./image/headsearch.png" alt="">
+                    <ul>
+                        <li><a href="javascript:;">租房</a></li>
+                        <li><a href="javascript:;">找房</a></li>
+                    </ul>
+                </div>
+                <div class="personCenter">
+                    <!--<a href="javascript:;"> <img src="./image/headuser.png" alt=""></a>-->
+                    <a href="javascript:;" class="login">
+                        <img src="./image/headuser.png" alt="">
+                        登录
+                    </a>
+                    <a href="javascript:;">
+                        注册
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--中心内容-->
+    <div class="findHouse">
+        <!--搜索部分-->
+        <div class="f-searchBar">
+            <div class="f-hunt">
+                <div class="f-category">
+                    <a href="javascript:;" class="f-active f-find">找房</a>
+                    <a href="javascript:;" class="f-rent">租房</a>
+                    <a href="javascript:;" class="f-findPlot">找小区</a>
+                </div>
+                <div class="f-searchCont">
+                    <span><em></em></span>
+                    <input type="text" placeholder="您想找的小区、商圈">
+                    <a href="javascript:;"><img src="./image/search.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!--限制条件-->
+        <div class="f-limit">
+            <!--区域-->
+            <dl class="f-area">
+                <dt>区域</dt>
+                <dd>
+                    <a href="javascript:;" class="f-active">不限</a>
+                    <a href="javascript:;">不限</a>
+                    <a href="javascript:;">不限</a>
+                    <a href="javascript:;">不限</a>
+                    <a href="javascript:;">不限</a>
+                    <a href="javascript:;">不限</a>
+                    <a href="javascript:;">不限</a>
+                </dd>
+            </dl>
+            <!--单选框售价-->
+            <dl>
+                <dt>售价</dt>
+                <dd>
+                    <!--label的for和input的ID值相同，保证点中label时也可以选中单选框-->
+                    <label for="p1"><input type="radio" id="p1" name="price">40万以下</label>
+                    <label for="p2"><input type="radio" id="p2" name="price">40-60万</label>
+                    <label for="p3"><input type="radio" id="p3" name="price">60-80万</label>
+                    <label for="p4"><input type="radio" id="p4" name="price">80-100万</label>
+                    <label for="p5"><input type="radio" id="p5" name="price">100-150万</label>
+                    <label for="p6"><input type="radio" id="p6" name="price">150-200万</label>
+                    <a href="javascript:;" class="f-clickMore">更多及自定义</a>
+                    <div class="f-moreCont f-display">
+                        <label for="p7"><input type="radio" id="p7" name="price">200万以上</label>
+                        <p> <input type="text"> - <input type="text"> 万 <button>确定</button></p>
+                    </div>
+                </dd>
+            </dl>
+            <!--多选框售价-->
+            <dl>
+                <dt>售价</dt>
+                <dd>
+                    <!--label的for和input的ID值相同，保证点中label时也可以选中复选框-->
+                    <label for="a1"><input type="checkbox" id="a1">40万以下</label>
+                    <label for="a2"><input type="checkbox" id="a2">40-60万</label>
+                    <label for="a3"><input type="checkbox" id="a3">60-80万</label>
+                    <label for="a4"><input type="checkbox" id="a4">80-100万</label>
+                    <label for="a5"><input type="checkbox" id="a5">100-150万</label>
+                    <label for="a6"><input type="checkbox" id="a6">150-200万</label>
+                    <a href="javascript:;" class="f-clickMore">更多及自定义</a>
+                    <div class="f-moreCont f-display">
+                        <label for="a7"><input type="radio" id="a7" name="price">200万以上</label>
+                        <p> <input type="text"> - <input type="text"> 万 <button>确定</button></p>
+                    </div>
+                </dd>
+            </dl>
+
+            <!--点击更多-->
+            <!--<div class="f-moreLimit">更多</div>-->
+        </div>
+
+        <!--搜索房源-->
+        <div class="f-findHouse">
+            <!--tab栏-->
+            <div class="f-condition">
+                <ul>
+                    <li class="f-chooseActive"><a href="javascript:;">默认排序</a></li>
+                    <li><a href="javascript:;">最新</a></li>
+                    <li><a href="javascript:;">单价</a></li>
+                    <li><a href="javascript:;">房屋单价</a></li>
+                    <li><a href="javascript:;">面积</a></li>
+                </ul>
+                <div class="f-chooseMore">
+                    <a href="javascript:;"><img src="./image/1.jpg" alt=""></a>
+                    <a href="javascript:;"><img src="./image/1.jpg" alt=""></a>
+                </div>
+            </div>
+            <!--房源-->
+            <div class="f-house">
+                <div class="f-disBlock">
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <ul>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="javascript:;">
+                                <div class="f-houseDetails">
+                                    <img src="./image/1.jpg" alt="" class="f-housePic">
+
+                                    <div class="f-cen">
+                                        <h4>独享天台私家花园  双地铁精装</h4>
+                                        <p class="f-dePic">3室2厅/321.6平方米/新世纪水山缘</p>
+                                        <div class="f-feature">
+                                            <div class="f-d1">
+                                                <div class="f-dd1">
+                                                    南北<br>通透
+                                                </div>
+                                            </div>
+                                            <div class="f-d2">
+                                                <div class="f-dd2">
+                                                    满五<br>唯一
+                                                </div>
+                                            </div>
+                                            <div class="f-d3">
+                                                <div class="f-dd3">
+                                                    复式
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="f-housePrice">
+                                        <p class="f-total"><span>350</span>万</p>
+                                        <p class="f-univalence"><span>12,456</span>元/平</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <!--页数-->
+            <div class="f-pages">
+                <ul>
+                    <li><a href="javascript:;" class="f-pageActive">1</a></li>
+                    <li><a href="javascript:;">2</a></li>
+                    <li><a href="javascript:;">3</a></li>
+                    <li><a href="javascript:;">4</a></li>
+                    <li><a href="javascript:;">5</a></li>
+                    <li><a href="javascript:;">6</a></li>
+                    <li><a href="javascript:;">7</a></li>
+                    <li><a href="javascript:;">8</a></li>
+                    <li><a href="javascript:;">9</a></li>
+                    <li><a href="javascript:;">10</a></li>
+                    <li><a href="javascript:;" class="f-lastPage">下一页</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!--推荐楼盘-->
+        <div class="f-recommend">
+            <div class="f-recommendTitle">
+                <h3>推荐楼盘</h3>
+                <a href="javascript:;">更多烟台新房 <img src="./image/1.jpg" alt=""></a>
+            </div>
+            <ul>
+                <li>
+                    <div class="f-otherDetails">
+                        <div class="f-picture">
+                            <div class="f-price">
+                                <img src="./image/1.jpg" alt="">
+                                <div><span>350</span>万</div>
+                            </div>
+                        </div>
+                        <div class="f-otherBottom">
+                            <h1>独享天台私家花园双地铁精品</h1>
+                            <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                            <div class="f-moreFeature">
+                                <div class="f-d1">
+                                    <div class="f-dd1">
+                                        南北<br>通透
+                                    </div>
+                                </div>
+                                <div class="f-d2">
+                                    <div class="f-dd2">
+                                        满五<br>唯一
+                                    </div>
+                                </div>
+                                <div class="f-d3">
+                                    <div class="f-dd3">
+                                        复式
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-otherDetails">
+                        <div class="f-picture">
+                            <div class="f-price">
+                                <img src="./image/1.jpg" alt="">
+                                <div><span>350</span>万</div>
+                            </div>
+                        </div>
+                        <div class="f-otherBottom">
+                            <h1>独享天台私家花园双地铁精品</h1>
+                            <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                            <div class="f-moreFeature">
+                                <div class="f-d1">
+                                    <div class="f-dd1">
+                                        南北<br>通透
+                                    </div>
+                                </div>
+                                <div class="f-d2">
+                                    <div class="f-dd2">
+                                        满五<br>唯一
+                                    </div>
+                                </div>
+                                <div class="f-d3">
+                                    <div class="f-dd3">
+                                        复式
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-otherDetails">
+                        <div class="f-picture">
+                            <div class="f-price">
+                                <img src="./image/1.jpg" alt="">
+                                <div><span>350</span>万</div>
+                            </div>
+                        </div>
+                        <div class="f-otherBottom">
+                            <h1>独享天台私家花园双地铁精品</h1>
+                            <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                            <div class="f-moreFeature">
+                                <div class="f-d1">
+                                    <div class="f-dd1">
+                                        南北<br>通透
+                                    </div>
+                                </div>
+                                <div class="f-d2">
+                                    <div class="f-dd2">
+                                        满五<br>唯一
+                                    </div>
+                                </div>
+                                <div class="f-d3">
+                                    <div class="f-dd3">
+                                        复式
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="f-otherDetails">
+                        <div class="f-picture">
+                            <div class="f-price">
+                                <img src="./image/1.jpg" alt="">
+                                <div><span>350</span>万</div>
+                            </div>
+                        </div>
+                        <div class="f-otherBottom">
+                            <h1>独享天台私家花园双地铁精品</h1>
+                            <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                            <div class="f-moreFeature">
+                                <div class="f-d1">
+                                    <div class="f-dd1">
+                                        南北<br>通透
+                                    </div>
+                                </div>
+                                <div class="f-d2">
+                                    <div class="f-dd2">
+                                        满五<br>唯一
+                                    </div>
+                                </div>
+                                <div class="f-d3">
+                                    <div class="f-dd3">
+                                        复式
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--公共尾部-->
+    <div class="common-footer">
+        <!--关于我们-->
+        <div class="aboutUs">
+            <ul>
+                <li><a href="javascript:;">了解我的房子</a></li>
+                <li><a href="javascript:;">关于我的房子</a></li>
+                <li><a href="javascript:;">联系我们</a></li>
+                <li><a href="javascript:;">加入我们</a></li>
+                <li><a href="javascript:;">隐私声明</a></li>
+            </ul>
+            <ul>
+                <li><a href="javascript:;">网站地址</a></li>
+                <li><a href="javascript:;">友情链接</a></li>
+                <li><a href="javascript:;">经纪人登录</a></li>
+            </ul>
+            <ul>
+                <li>官方客服</li>
+                <li>0535-123456</li>
+                <li>地址</li>
+                <li>烟台莱山</li>
+            </ul>
+            <!--文字描述-->
+            <div class="footerText">
+                <p>一键倾城 / 为您为家</p>
+                <p>集二手、新房、租房功能于一体</p>
+                <p>随时随地任性找房</p>
+                <p>IM匿名咨询让您放心</p>
+                <p>消息动态推送让您省心</p>
+                <p>服务承诺让您安心</p>
+                <p>数据百科锦囊让您感受贴心漫漫找房路</p>
+                <p>我们努力为您想更多。</p>
+            </div>
+            <!--二维码-->
+            <div class="QR">
+                <a href="javascript:;"><img src="./image/Android.png" alt=""></a>
+                <a href="javascript:;"><img src="./image/iPhone.png" alt=""></a>
+                <img src="./image/erweima.jpg" alt="">
+            </div>
+
+        </div>
+        <div class="right">
+            <p>我的房子（上海）科技有限公司 | 网络经营许可证 京ICP备16057509号-2 | © Copyright©2010-2017 我的房子wodefangzi.com版权所有</p>
+            <p>京公网安备11010802024019号</p>
+        </div>
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/findHouse.js"></script>
+</body>
+</html>

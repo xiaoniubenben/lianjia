@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买房</title>
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transtion=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-we.c-app-status-bar-style">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!--<script src="./js/flex.js"></script>-->
+    <link rel="stylesheet" href="./css/payment.css">
+</head>
+<body>
+
+    <!--返回-->
+    <div class="pm-back">
+        <i class="iconfont icon-zuojiantou"></i>
+        请选择支付方式
+    </div>
+    <div class="payment">
+        <!--正文-->
+        <div class="pm-cont">
+            <!--购买-->
+            <div class="pm-buy">
+                <ul>
+                    <li><label for="p1"><i class="iconfont icon-zhifubao"></i>支付宝<input type="radio" id="p1" name="buy"></label></li>
+                    <li><label for="p2"><i class="iconfont icon-weixin"></i>微信<input type="radio" id="p2" name="buy"></label></li>
+                </ul>
+            </div>
+            <button>确认付款</button>
+        </div>
+    </div>
+    <!--弹框-->
+    <!--暂时无法获取-->
+    <div class="pm-popUp1 pm-allCommonPop">
+        <div class="pm-unable">
+            <p>暂时无法获取订单信息，请稍后再试。</p>
+            <a href="javascript:;">确定</a>
+        </div>
+    </div>
+    <!--问题反馈-->
+    <div class="pm-popUp2 pm-allCommonPop">
+        <div class="pm-feedback">
+            <p>亲，您是否遇到问题？您可以选择告诉我们。</p>
+            <a href="javascript:;" class="pm-delect">取消</a>
+            <a href="javascript:;" class="pm-sure">反馈</a>
+        </div>
+    </div>
+
+</body>
+</html>

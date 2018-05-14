@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>买房</title>
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta name="App-Config" content="fullscreen=yes,useHistoryState=yes,transtion=yes">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script>
+    <!--<script src="./js/flex.js"></script>-->
+    <link rel="stylesheet" href="./css/buy.css">
+</head>
+<body>
+<div class="buy">
+    <!--头部固定导航-->
+    <div class="b-nav">
+        <!--搜索框-->
+        <img src="./image/fanhui.png" alt="" class="b-back">
+        <div class="b-searchbar">
+            <div class="b-search">
+                <div class="b-dingwei"><a href="javascript:;"><img src="./image/dingwei.png" alt=""></a></div>
+                <input type="text" placeholder="您想住在哪?">
+                <div class="b-iconsousuo"><img src="./image/sousuo.png"></div>
+            </div>
+        </div>
+        <!--筛选条件-->
+        <div class="b-filtrate">
+            <div class="b-region"><a href="javascript:;">区域 <span></span></a></div>
+            <!--<div class="b-region"><a href="javascript:;">区域<img src="./image/xiasanjiao.png" alt=""></a></div>-->
+            <div class="b-price"><a href="javascript:;">总价<span></span></a></div>
+            <!--<div class="b-price"><a href="javascript:;">总价<img src="./image/xiasanjiao.png" alt=""></a></div>-->
+            <div class="b-type"><a href="javascript:;">户型<span></span></a></div>
+            <!--<div class="b-type"><a href="javascript:;">户型<img src="./image/xiasanjiao.png" alt=""></a></div>-->
+            <div class="b-moreChoose"><a href="javascript:;">更多<span></span></a></div>
+            <!--<div class="b-moreChoose"><a href="javascript:;">更多<img src="./image/xiasanjiao.png" alt=""></a></div>-->
+        </div>
+        <div class="b-filtrates">
+            <!--区域-->
+            <div class="b-region1 b-com">
+                <!--省-->
+                <div class="b-province">
+                    <ul>
+                        <li class="b-regeionActive">不限</li>
+                        <li>上海</li>
+
+                    </ul>
+                </div>
+                <!--市-->
+                <div class="b-city">
+                    <ul>
+                        <li class="b-active">不限</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                        <li>111</li>
+                    </ul>
+                </div>
+
+                <!--县-->
+                <div class="b-country">
+                    <ul>
+                        <li class="b-active">不限</li>
+                        <li>8888</li>
+                        <li>8888</li>
+                    </ul>
+                </div>
+
+            </div>
+            <!--总价-->
+            <div class="b-price1 b-com">
+                <div class="b-range">
+                    <div class="b-low">
+                        <p>最低价(万):</p><input type="number">
+                    </div>
+                    <div class="b-high">
+                        <p>最高价(万):</p><input type="number">
+                    </div>
+                </div>
+                <div class="b-slidingBlock">
+                    <div class="b-section"></div>
+                    <div class="b-left">
+                        <p>0</p>
+                        <div class="b-circle">
+                            <span></span>
+                            <div class="b-interCircle"></div>
+                        </div>
+                    </div>
+                    <div class="b-right">
+                        <p>2000</p>
+                        <div class="b-circle">
+                            <span></span>
+                            <div class="b-interCircle"></div>
+                        </div>
+                    </div>
+                </div>
+                <button>确定</button>
+            </div>
+            <!--户型-->
+            <div class="b-type1 b-com">
+                <!--label的for和input的ID值相同，保证点中label时也可以选中复选框-->
+                <label for="1">一室<input type="checkbox" id="1"></label>
+                <label for="2">二室<input type="checkbox" id="2"></label>
+                <label for="3">三室<input type="checkbox" id="3"></label>
+                <label for="4">四室<input type="checkbox" id="4"></label>
+                <label for="5">五室及以上<input type="checkbox" id="5"></label>
+                <button>确定</button>
+            </div>
+            <!--更多-->
+            <div class="b-moreChoose1 b-com">
+                <div class="b-line"></div>
+                <!--<div class="b-moreCont">-->
+                <!--面积-->
+                <div class="b-common">
+                    <h3>建筑面积（m²）</h3>
+                    <div class="b-options">
+                        <a href="javascript:;" class="b-moreActive">50以下</a>
+                        <a href="javascript:;">50-70</a>
+                        <a href="javascript:;">70-90</a>
+                        <a href="javascript:;">90-120</a>
+                        <a href="javascript:;">120-150</a>
+                        <a href="javascript:;">150-200</a>
+                        <a href="javascript:;">200-300</a>
+                        <a href="javascript:;">300以上</a>
+                    </div>
+                </div>
+                <!--朝向-->
+                <div class="b-common">
+                    <h3>朝向</h3>
+                    <div class="b-options">
+                        <a href="javascript:;">朝东</a>
+                        <a href="javascript:;">朝西</a>
+                        <a href="javascript:;">朝南</a>
+                        <a href="javascript:;">朝北</a>
+                        <a href="javascript:;">朝东</a>
+                        <a href="javascript:;">朝东</a>
+                        <a href="javascript:;">朝东</a>
+                    </div>
+                </div>
+                <!--装修-->
+                <div class="b-common">
+                    <h3>装修</h3>
+                    <div class="b-options">
+                        <a href="javascript:;">精装修</a>
+                        <a href="javascript:;">毛坯</a>
+                        <a href="javascript:;">普通装修</a>
+                        <a href="javascript:;">豪华装修</a>
+                    </div>
+                </div>
+                <!--标签-->
+                <div class="b-common">
+                    <h3>标签</h3>
+                    <div class="b-options">
+                        <a href="javascript:;">房满两年</a>
+                        <a href="javascript:;">房满五年</a>
+                        <a href="javascript:;">新上房源</a>
+                        <a href="javascript:;">随时看房</a>
+                    </div>
+                </div>
+                <!--供暖方式-->
+                <div class="b-common">
+                    <h3>供暖方式</h3>
+                    <div class="b-options">
+                        <a href="javascript:;">市政供暖</a>
+                        <a href="javascript:;">自供暖</a>
+                    </div>
+                </div>
+                <!--电梯-->
+                <div class="b-common">
+                    <h3>电梯</h3>
+                    <div class="b-options">
+                        <a href="javascript:;">有电梯</a>
+                        <a href="javascript:;">无电梯</a>
+                    </div>
+                </div>
+                <div class="b-btn">
+                    <a href="javascript:;">重置</a>
+                    <a href="javascript:;">确定</a>
+                </div>
+                <!--</div>-->
+            </div>
+        </div>
+    </div>
+
+
+    <!--内容-->
+    <div class="b-content">
+        <ul>
+            <li>
+                <div class="b-details">
+                    <h1>独享天台私家花园双地铁精品</h1>
+                    <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                    <div class="b-feature">
+                        <div class="b-d1">
+                                南北通透
+                        </div>
+                        <div class="b-d2">
+                                满五唯一
+                        </div>
+                        <div class="b-d3">
+                                复式
+                        </div>
+
+                        <!--认证小图片-->
+                        <!--<div class="b-authentication">-->
+                            <!--<img src="./image/rz.png" alt="">-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+                <div class="b-picture">
+                    <div class="b-price">
+                        <img src="./image/fang.png" alt="">
+                        <div><span>350</span>万</div>
+                    </div>
+                    <p><span>26</span>人关注/共<span>94</span>次带看/<span>3</span>个月以前发布</p>
+                </div>
+            </li>
+            <li class="b-right">
+            <div class="b-details">
+                <h1>独享天台私家花园双地铁精品</h1>
+                <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                <div class="b-feature">
+                    <div class="b-d1">
+                        南北通透
+                    </div>
+                    <div class="b-d2">
+                        满五唯一
+                    </div>
+                    <div class="b-d3">
+                        复式
+                    </div>
+
+                    <!--认证小图片-->
+                    <!--<div class="b-authentication">-->
+                    <!--<img src="./image/rz.png" alt="">-->
+                    <!--</div>-->
+                </div>
+
+            </div>
+            <div class="b-picture">
+                <div class="b-price">
+                    <img src="./image/fang.png" alt="">
+                    <div><span>350</span>万</div>
+                </div>
+                <p><span>26</span>人关注/共<span>94</span>次带看/<span>3</span>个月以前发布</p>
+            </div>
+        </li>
+            <li>
+                <div class="b-details">
+                    <h1>独享天台私家花园双地铁精品</h1>
+                    <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                    <div class="b-feature">
+                        <div class="b-d1">
+                            南北通透
+                        </div>
+                        <div class="b-d2">
+                            满五唯一
+                        </div>
+                        <div class="b-d3">
+                            复式
+                        </div>
+
+                        <!--认证小图片-->
+                        <!--<div class="b-authentication">-->
+                        <!--<img src="./image/rz.png" alt="">-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+                <div class="b-picture">
+                    <div class="b-price">
+                        <img src="./image/fang.png" alt="">
+                        <div><span>350</span>万</div>
+                    </div>
+                    <p><span>26</span>人关注/共<span>94</span>次带看/<span>3</span>个月以前发布</p>
+                </div>
+            </li>
+            <li class="b-right">
+                <div class="b-details">
+                    <h1>独享天台私家花园双地铁精品</h1>
+                    <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                    <div class="b-feature">
+                        <div class="b-d1">
+                            南北通透
+                        </div>
+                        <div class="b-d2">
+                            满五唯一
+                        </div>
+                        <div class="b-d3">
+                            复式
+                        </div>
+
+                        <!--认证小图片-->
+                        <!--<div class="b-authentication">-->
+                        <!--<img src="./image/rz.png" alt="">-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+                <div class="b-picture">
+                    <div class="b-price">
+                        <img src="./image/fang.png" alt="">
+                        <div><span>350</span>万</div>
+                    </div>
+                    <p><span>26</span>人关注/共<span>94</span>次带看/<span>3</span>个月以前发布</p>
+                </div>
+            </li>
+            <li>
+                <div class="b-details">
+                    <h1>独享天台私家花园双地铁精品</h1>
+                    <p>3室2厅/321.6平方米/新世纪水山缘</p>
+                    <div class="b-feature">
+                        <div class="b-d1">
+                            南北通透
+                        </div>
+                        <div class="b-d2">
+                            满五唯一
+                        </div>
+                        <div class="b-d3">
+                            复式
+                        </div>
+
+                        <!--认证小图片-->
+                        <!--<div class="b-authentication">-->
+                        <!--<img src="./image/rz.png" alt="">-->
+                        <!--</div>-->
+                    </div>
+
+                </div>
+                <div class="b-picture">
+                    <div class="b-price">
+                        <img src="./image/fang.png" alt="">
+                        <div><span>350</span>万</div>
+                    </div>
+                    <p><span>26</span>人关注/共<span>94</span>次带看/<span>3</span>个月以前发布</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+
+
+    <!--底部footer-->
+    <div class="b-footer">
+        <ul>
+            <li class="b-homePage"><a href="javascript:;"><span>首页</span></a></li>
+            <li class="b-news"><a href="javascript:;"><span>消息</span></a></li>
+            <li class="b-attention"><a href="javascript:;"><span>关注</span></a></li>
+            <li class="b-me"><a href="javascript:;"><span>我</span></a></li>
+        </ul>
+    </div>
+
+    <!--弹框-->
+    <div class="b-popUp b-allCommonPop">
+        <div class="b-customization">
+            <p>暂无该条件房源，是否需要定制？</p>
+            <a href="javascript:;" class="b-no">否</a>
+            <a href="javascript:;" class="b-yes">是</a>
+        </div>
+    </div>
+
+</div>
+<script src="./js/zepto.js"></script>
+<script src="./js/buy.js"></script>
+</body>
+</html>

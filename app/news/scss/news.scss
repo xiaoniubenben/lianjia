@@ -1,0 +1,290 @@
+@charset "UTF-8";
+
+@import "variables";
+@import "normalize";
+@import "core";
+@import "mixins";
+@import "iconfont";
+
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+body{
+  background-color: white;
+}
+
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+//返回
+.n-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  font-size: pxTorem(28px);
+  border-bottom: 1px solid $gray1;
+  background-color: white;
+  padding: 0 pxTorem(30px);
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  text-align: center;
+  i{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+}
+.news{
+padding-bottom: pxTorem(120px);
+//消息通知内容
+  .n-list{
+    background-color: white;
+    padding: 0 pxTorem(40px);
+    padding-top: pxTorem(86px);
+    @include box-sizing(border-box);
+    overflow: hidden;
+
+    //最上面的消息通知
+    .n-inform{
+      height: pxTorem(127px);
+      padding-top: pxTorem(15px);
+      border-bottom: 1px solid $gray1;
+      @include box-sizing(border-box);
+
+      .n-informCont{
+        //float: right;
+        //width: pxTorem(580px);
+        height: pxTorem(96px);
+        //左边头像框
+        .n-leftCon{
+          float: left;
+          position: relative;
+          img{
+            display: inline-block;
+            width: pxTorem(96px);
+            height: pxTorem(96px);
+            @include border-radius(8px);
+          }
+          div{
+            position: absolute;
+            top:- pxTorem(8px);
+            left:pxTorem(80px);
+            width: pxTorem(30px);
+            height: pxTorem(30px);
+            background-color: white;
+            @include border-radius(50%);
+          }
+          span{
+            position: absolute;
+            top: pxTorem(5px);
+            left:pxTorem(5px);
+            width: pxTorem(20px);
+            height: pxTorem(20px);
+            background-color: $colOrange;
+            @include border-radius(50%);
+            color: white;
+            text-align: center;
+            font-size: pxTorem(14px);
+            line-height: pxTorem(22px);
+          }
+
+        }
+        //右边消息内容
+        .n-rightCon{
+          padding:pxTorem(5px) 0;
+          padding-left: pxTorem(115px);
+          @include box-sizing(border-box);
+          height: pxTorem(90px);
+          position: relative;
+          p{
+            font-size: pxTorem(22px);
+            color: $fontCol1;
+            line-height: 1;
+            margin-bottom: pxTorem(18px);
+          }
+          span{
+            position: absolute;
+            bottom:0;
+            left:pxTorem(115px);
+            font-size: pxTorem(20px);
+            color: $fontCol2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+          }
+        }
+
+      }
+    }
+
+
+  //  其他聊天记录
+    .n-chat{
+      //margin-top: 1px;
+      //float: left;
+      //position: relative;
+      @include box-sizing(border-box);
+      //background-color: white;
+      //overflow: hidden;
+
+      .n-chatCont{
+        height: pxTorem(127px);
+        //background-color: white;
+        border-bottom: 1px solid $gray1;
+        padding-top: pxTorem(15px);
+        @include box-sizing(border-box);
+      }
+      //左边头像框
+      .n-chatLeftCon{
+        float: left;
+        position: relative;
+        img{
+          display: inline-block;
+          width: pxTorem(96px);
+          height: pxTorem(96px);
+          @include border-radius(8px);
+        }
+        span{
+          //display: block;
+          position: absolute;
+          top:- pxTorem(8px);
+          left:pxTorem(83px);
+          width: pxTorem(22px);
+          height: pxTorem(22px);
+          background-color: $colOrange;
+          @include border-radius(50%);
+          color: white;
+          text-align: center;
+          font-size: pxTorem(14px);
+          line-height: pxTorem(22px);
+        }
+
+      }
+      //右边具体聊天内容
+      .n-chatRightCon{
+        padding:pxTorem(5px) 0;
+        padding-left: pxTorem(115px);
+        @include box-sizing(border-box);
+        height: pxTorem(90px);
+        position: relative;
+        p{
+          float: left;
+        }
+        .icon-jiantou{
+          font-size: pxTorem(22px);
+          float: right;
+        }
+        .n-person{
+          height: pxTorem(22px);
+          line-height: pxTorem(22px);
+          .n-name{
+            font-size: pxTorem(22px);
+            color: $fontCol1;
+          }
+          .n-time{
+            font-size: pxTorem(16px);
+            color: $fontCol2;
+            float: right;
+          }
+        }
+       .n-information{
+         height: pxTorem(22px);
+         line-height: pxTorem(24px);
+         margin-top: pxTorem(40px);
+         .n-message{
+           width: pxTorem(420px);
+           font-size: pxTorem(22px);
+           color: $fontCol2;
+           display: -webkit-box;
+           -webkit-box-orient: vertical;
+           -webkit-line-clamp: 1;
+           overflow: hidden;
+         }
+         .n-more{
+           font-family: Consolas;
+           font-size: pxTorem(30px);
+           color: $fontCol2;
+         }
+        }
+
+      }
+
+
+
+    }
+
+
+
+  }
+
+}
+
+//底部footer
+.n-footer{
+  width: 100%;
+  position: fixed;
+  height:pxTorem(100px);
+  background-color: white;
+  left:0;
+  bottom:0;
+  font-size: pxTorem(22px);
+  border-top: 1px solid $gray1;
+  @include box-sizing(border-box);
+  ul{
+    li{
+      float: left;
+      width: 25%;
+      height:pxTorem(100px);
+      position: relative;
+      a{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(- 50%,-50%);
+        width:100%;
+        color:$fontCol2;
+        text-align: center;
+      }
+      span{
+        line-height: 1;
+      }
+      i{
+        font-size: pxTorem(40px);
+        color: $fontCol2;
+        display: block;
+        margin-bottom: pxTorem(6px);
+      }
+      .icon-xiaoxi1{
+        color: $colOrange;
+      }
+    }
+    .n-news a{
+      color: $colOrange;
+    }
+
+
+  }
+}

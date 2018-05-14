@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  //background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+
+
+.tab{
+  height: 100%;
+  padding-bottom: pxTorem(100px);
+  overflow-y: auto;
+  @include box-sizing(border-box);
+  background-color: $colBackground;
+  .t-nav{
+    position: fixed;
+    top:0;
+    left:0;
+    height: pxTorem(70px);
+    width: 100%;
+    background-color: white;
+    z-index: 10;
+    ul{
+      li{
+        float: left;
+        width: 50%;
+        text-align: center;
+        a{
+          display: inline-block;
+          width: 100%;
+          height: pxTorem(70px);
+          line-height: pxTorem(70px);
+          color: $fontCol1;
+          font-size: pxTorem(22px);
+        }
+      }
+      li:first-child{
+        border-top-right-radius: pxTorem(12px);
+        overflow: hidden;
+      }
+      li:last-child{
+        border-top-left-radius: pxTorem(12px);
+        overflow: hidden;
+      }
+      .t-active{
+         background-color: $colBackground;
+         a{
+           color: $colOrange;
+         }
+       }
+    }
+  }
+
+
+  //  内容
+  .t-contents{
+    height: 100%;
+    background-color: $colBackground;
+    .t-content{
+      padding-bottom: pxTorem(100px);
+      display: none;
+      @include box-sizing(border-box);
+    }
+    .t-contActive{
+        display: block;
+      }
+  }
+
+  .t-content{
+    padding:0 pxTorem(30px);
+    padding-bottom:0;
+    padding-top:pxTorem(103px);
+    background-color: $colBackground;
+    @include box-sizing(border-box);
+    overflow-y: auto;
+
+    ul{
+      column-count: 2;
+      -webkit-column-count: 2;
+      -o-column-count: 2;
+      -ms-column-count: 2;
+      -moz-column-count: 2;
+
+      li{
+        -moz-page-break-inside: avoid;
+        -webkit-column-break-inside: avoid;
+        break-inside: avoid;
+        counter-increment: item-counter;
+        padding:pxTorem(20px) pxTorem(25px);
+        margin-bottom: pxTorem(20px);
+        //margin-right: pxTorem(20px);
+        background-color: white;
+        width: pxTorem(280px);
+        float: left;
+        @include border-radius(8px);
+        @include box-sizing(border-box);
+      }
+      //li:nth-child(1),li:nth-child(2){
+      //  margin-top: pxTorem(0px);
+      //}
+      //上半部分细节介绍
+      .t-details{
+        width: 100%;
+        border-bottom:1px solid #e7e7e7;
+        margin-bottom: pxTorem(15px);
+        overflow: hidden;
+        h1{
+          padding: 0;
+          margin: 0;
+          line-height: pxTorem(35px);
+          font-size: pxTorem(26px);
+          color: $fontCol1;
+        }
+        p{
+          font-size: pxTorem(18px);
+          color: $fontCol2;
+        }
+        .t-feature{
+          width: 100%;
+          margin: pxTorem(10px) 0;
+          overflow: hidden;
+          .t-d1,.t-d2,.t-d3{
+            float: left;
+            padding: pxTorem(6px) pxTorem(8px);
+            @include border-radius(4px);
+            font-size: pxTorem(16px);
+            margin-right: pxTorem(6px);
+          }
+          .t-d1{
+            background-color: #ffe5d3;
+            color: $colOrange;
+          }
+          .t-d2{
+            background-color: #cffbff;
+            color: #84d6e2;
+          }
+          .t-d3{
+            background-color: #fdf1e0;
+            color: #f19a21;
+          }
+          //认证小图片
+          //.t-authentication{
+          //  height: pxTorem(35px);
+          //  margin:auto;
+          //  float: right;
+          //  img{
+          //    display: inline-block;
+          //    vertical-align: middle;
+          //    width: pxTorem(40px);
+          //    height: pxTorem(18px);
+          //  }
+          //
+          //}
+        }
+
+
+
+
+
+
+      }
+
+      //下半部分图片
+      .t-picture{
+        width: 100%;
+        img{
+          width: 100%;
+          height: pxTorem(183px);
+        }
+        .t-price{
+          position: relative;
+
+          div{
+            color:white;
+            position: absolute;
+            bottom:pxTorem(10px);
+            right:pxTorem(10px);
+            width: pxTorem(60px);
+            height: pxTorem(60px);
+            line-height: pxTorem(60px);
+            text-align: center;
+            @include border-radius(50%);
+            background-color: #eb6100;
+            font-size: pxTorem(10px);
+            span{
+              font-size: pxTorem(20px);
+            }
+          }
+        }
+        p{
+          font-size: pxTorem(18px);
+          color: $fontCol2;
+          margin-top: pxTorem(10px);
+          span{
+            color: $colOrange;
+          }
+        }
+      }
+
+
+    }
+
+  }
+//下拉小箭头
+  .t-more{
+    width: 100%;
+    position: fixed;
+    bottom:0;
+    left:0;
+    .t-arrow{
+      span{
+        position: relative;
+        width:0;
+        height: 0;
+        border-right:pxTorem(14px) solid transparent;
+        border-left:pxTorem(14px) solid transparent;
+        border-top:pxTorem(14px) solid $colDark;
+        float: right;
+        top: - pxTorem(50px);
+        right:pxTorem(320px);
+      }
+      em{
+        position: absolute;
+        top:- pxTorem(19px);
+        right:- pxTorem(14px);
+        width:0;
+        height: 0;
+        border-right:pxTorem(14px) solid transparent;
+        border-left:pxTorem(14px) solid transparent;
+        border-top:pxTorem(14px) solid #DADADB;
+      }
+
+    }
+  }
+}
+
+//底部footer
+.t-footer{
+  width: 100%;
+  position: fixed;
+  height:pxTorem(100px);
+  background-color: white;
+  left:0;
+  bottom:0;
+  font-size: pxTorem(22px);
+  border-top: 1px solid $gray1;
+  @include box-sizing(border-box);
+  ul{
+    li{
+      float: left;
+      width: 25%;
+      height:pxTorem(100px);
+      position: relative;
+      a{
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(- 50%,-50%);
+        width:100%;
+        color:$fontCol2;
+        text-align: center;
+      }
+      span{
+        line-height: 1;
+      }
+      i{
+        font-size: pxTorem(40px);
+        color: $fontCol2;
+        display: block;
+        margin-bottom: pxTorem(6px);
+      }
+      .icon-shoucang{
+        color: $colOrange;
+      }
+    }
+    .t-attention a{
+      color: $colOrange;
+    }
+
+
+  }
+}
+
+
+
+
+
+

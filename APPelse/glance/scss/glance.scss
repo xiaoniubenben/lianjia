@@ -1,0 +1,295 @@
+@charset "utf-8";
+
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#ccc;
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  //background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+//返回
+.back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(112px);
+  line-height: 1;
+  padding-top: pxTorem(60px);
+  padding-left: pxTorem(40px);
+  padding-bottom: pxTorem(16px);
+  font-size: pxTorem(27px);
+  color:$colDark;
+  border-bottom: 1px solid $colLight;
+  background-color: white;
+  @include box-sizing(border-box);
+  z-index: 10;
+  span{
+    font-family: Consolas;
+    font-size: pxTorem(35px);
+  }
+  //img{
+  //  display: inline-block;
+  //  width: pxTorem(20px);
+  //  height: pxTorem(20px);
+  //}
+}
+
+
+.glance{
+  padding-bottom: pxTorem(120px);
+   padding-top: pxTorem(112px);
+   @include box-sizing(border-box);
+  //个人信息
+  .g-personage{
+    height: pxTorem(448px);
+    padding: 0 pxTorem(40px);
+    @include box-sizing(border-box);
+    position: relative;
+    .p-personal{
+      position: absolute;
+      top:50%;
+      transform: translateY(- 50%);
+    }
+    img{
+      width: pxTorem(145px);
+      height: pxTorem(145px);
+      @include border-radius(8px);
+    }
+    h1{
+      color: $colDark;
+      font-size: pxTorem(42px);
+    }
+    p{
+      color: $colLight;
+      font-size: pxTorem(19px);
+    }
+    span{
+      color: $colOrange;
+    }
+  }
+
+
+  .g-perHistory{
+    //margin-bottom: pxTorem(23px);
+    height: pxTorem(86px);
+    line-height: pxTorem(86px);
+    padding:0 pxTorem(30px);
+    background-color: #DADADB ;
+    @include box-sizing(border-box);
+
+    h3{
+      float: left;
+      font-size: pxTorem(24px);
+      color: $colDark;
+    }
+    .g-more{
+      float: right;
+      font-family: Consolas;
+      font-size: pxTorem(28px);
+      color: $colLight;
+    }
+  }
+//  内容
+  .g-content{
+    height: 100%;
+    //margin-top: pxTorem(240px);
+    padding:pxTorem(23px) pxTorem(30px);
+    padding-top: 0;
+    background-color: #DADADB ;
+    @include box-sizing(border-box);
+    overflow-y: auto;
+
+    ul{
+      height: 100%;
+      width: 10000px;
+      li{
+        padding:pxTorem(20px) pxTorem(25px);
+        margin-right: pxTorem(23px);
+        float: left;
+        background-color: white;
+        width: pxTorem(278px);
+        height: pxTorem(398px);
+        @include border-radius(12px);
+        @include box-sizing(border-box);
+      }
+      li:last-child{
+        width: pxTorem(12px);
+        background-color: #DADADB;
+        padding:0;
+      }
+      //上半部分细节介绍
+      .g-details{
+        width: 100%;
+        height: pxTorem(135px);
+        border-bottom:1px solid $colLight;
+        margin-bottom: pxTorem(15px);
+        h1{
+          padding: 0;
+          margin: 0;
+          line-height: pxTorem(35px);
+          font-size: pxTorem(26px);
+        }
+        p{
+          font-size: pxTorem(12px);
+        }
+        .g-feature{
+          width: 100%;
+          margin-top: pxTorem(5px);
+          float: left;
+          .g-d1,.g-d2,.g-d3{
+            display: inline-block;
+            width: pxTorem(37px);
+            height: pxTorem(37px);
+            border:1px solid $colOrange;
+            @include border-radius(50%);
+            font-size: pxTorem(12px);
+            position: relative;
+
+          }
+          .g-dd1,.g-dd2,.g-dd3{
+            line-height: 1;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+            width: pxTorem(24px);
+            border: none;
+          }
+
+
+          //认证小图片
+          .g-authentication{
+            height: pxTorem(35px);
+            margin:auto;
+            float: right;
+            img{
+              display: inline-block;
+              vertical-align: middle;
+              width: pxTorem(40px);
+              height: pxTorem(18px);
+            }
+
+          }
+        }
+
+
+
+
+
+
+      }
+
+      //下半部分图片
+      .g-picture{
+        width: 100%;
+        img{
+          width: 100%;
+          height: pxTorem(183px);
+        }
+        .g-price{
+          position: relative;
+
+          div{
+            color:white;
+            position: absolute;
+            bottom:pxTorem(10px);
+            right:pxTorem(10px);
+            width: pxTorem(60px);
+            height: pxTorem(60px);
+            line-height: pxTorem(60px);
+            text-align: center;
+            @include border-radius(50%);
+            background-color: #eb6100;
+            font-size: pxTorem(10px);
+            span{
+              font-size: pxTorem(20px);
+            }
+          }
+        }
+
+        span{
+          font-size: pxTorem(12px);
+        }
+      }
+
+
+    }
+
+  }
+
+}
+
+//底部footer
+.g-footer{
+  width: 100%;
+  position: fixed;
+  height:pxTorem(120px);
+  background-color: white;
+  left:0;
+  bottom:0;
+
+  ul{
+    li{
+      margin-top:pxTorem(28px);
+      float: left;
+      width: 25%;
+      height:pxTorem(120px);
+      text-align: center;
+      padding-bottom:pxTorem(10px);
+      background: url("../image/f1.png") no-repeat center top;
+      background-size :pxTorem(42px) pxTorem(40px);
+      a{
+        padding-top:pxTorem(45px);
+        display: inline-block;
+        height:pxTorem(120px);
+        width:100%;
+        color:$colLight;
+      }
+
+    }
+    .g-me a{
+      color: $colOrange;
+    }
+    li:nth-child(2){
+      background-image: url("../image/f2.png");
+    }
+    li:nth-child(3){
+      background-image: url("../image/f3.png");
+    }
+    li:nth-child(4){
+      background-image: url("../image/ff4.png");
+    }
+
+
+  }
+}
+

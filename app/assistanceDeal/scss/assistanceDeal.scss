@@ -1,0 +1,200 @@
+@charset "utf-8";
+@import "variables";
+@import "normalize";
+@import "mixins";
+@import "core";
+@import "iconfont";
+
+$fontCol1:#333;
+$fontCol2:#999;
+$colDark:#666;
+$colLight:#8b8b8b;
+$colOrange:#f60;
+$colBackground:#f5f5f5;
+$gray1:#e7e7e7;
+html{
+  height: 100% ;
+  -webkit-text-size-adjust:none;
+}
+img{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+body{
+  height: 100%;
+  //background-color: $colBackground;
+}
+div{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+a:link{text-decoration:none;   /* 指正常的未被访问过的链接*/}
+a:visited{text-decoration:none; /*指已经访问过的链接*/}
+a:hover{text-decoration:none;/*指鼠标在链接*/}
+a:active{text-decoration:none;/* 指正在点的链接*/ }
+
+
+
+//返回
+.ad-back{
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: pxTorem(76px);
+  line-height: pxTorem(76px);
+  font-size: pxTorem(28px);
+  padding: 0 pxTorem(30px);
+  border-bottom: 1px solid $gray1;
+  //background-color: white;
+  @include box-sizing(border-box);
+  color: $fontCol1;
+  z-index: 10;
+  text-align: center;
+  i{
+    font-size: pxTorem(28px);
+    color: $fontCol1;
+    float: left;
+  }
+
+}
+
+.assistanceDeal{
+  padding-top: pxTorem(96px);
+  padding-bottom: pxTorem(104px);
+  @include box-sizing(border-box);
+  h3{
+    padding-left: pxTorem(30px);
+    @include box-sizing(border-box);
+    font-size: pxTorem(22px);
+    color: $fontCol1;
+    line-height: pxTorem(40px);
+  }
+  li{
+    height: pxTorem(100px);
+    background-color: white;
+    line-height: pxTorem(100px);
+    border-bottom: 1px solid $gray1;
+    padding: 0 pxTorem(30px);
+    @include box-sizing(border-box);
+    font-size: pxTorem(22px);
+    color: $fontCol1;
+    position: relative;
+  }
+  label{
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+  div{
+    float: left;
+    position: absolute;
+    top:50%;
+    transform: translateY(- 50%);
+    margin-left: pxTorem(90px);
+    p{
+      line-height: pxTorem(30px);
+      font-size: pxTorem(22px);
+    }
+  }
+  img{
+    width: pxTorem(70px);
+    height: pxTorem(70px);
+    @include border-radius(50%);
+    float: left;
+    margin-top: pxTorem(15px);
+  }
+  input{
+    float: right;
+    margin-top: pxTorem(35px);
+    /*同样，首先去除浏览器默认样式*/
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    /*编辑我们自己的样式*/
+    position: relative;
+    width: pxTorem(28px);
+    height: pxTorem(28px);
+    background: transparent;
+    border:1px solid $gray1;
+    @include border-radius(50%);
+    outline: none;
+    cursor: pointer;
+    @include box-sizing(border-box);
+  }
+  //✔√√
+  input:after{
+    content: '✔';
+    //position: absolute;
+    //top:-1px;
+    //left:-1px;
+    display: block;
+    font-weight: 100;
+    width: 100%;
+    height: 100%;
+    color: white;
+    font-size: pxTorem(16px);
+    background-color: $colOrange;
+    text-align: center;
+    line-height: pxTorem(28px);
+    //border:1px solid $colOrange;
+    /*增加动画*/
+    //-webkit-transition: all ease-in-out 300ms;
+    //-moz-transition: all ease-in-out 300ms;
+    //transition: all ease-in-out 300ms;
+    /*利用border-radius和opacity达到填充的假象，首先隐藏此元素*/
+    @include border-radius(50%);
+    opacity: 0;
+    //@include box-sizing(border-box);
+  }
+  input:checked:after{
+    @include border-radius(50%);
+    opacity: 1;
+  }
+
+}
+
+button{
+  position: fixed;
+  height: pxTorem(84px);
+  width: 100%;
+  line-height: 84px;
+  background-color: $colOrange;
+  color: white;
+  font-size: pxTorem(26px);
+  text-align: center;
+  bottom:0;
+  left: 0;
+}
+
+.ad-extraPop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  text-align: center;
+  font-size: pxTorem(20px);
+  .ad-contact {
+    display: inline-block;
+    padding: 0 pxTorem(44px);
+    height: pxTorem(60px);
+    line-height: pxTorem(60px);
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 20;
+    color: white;
+    position: relative;
+    top: 50%;
+    @include border-radius(pxTorem(30px))
+  }
+}
+
+.ad-popUp{
+  display: none;
+}
